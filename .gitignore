@@ -42,6 +42,10 @@ ExportedObj/
 *.mdb
 *.opendb
 *.VC.db
+*.log
+
+# JetBrains Rider project files
+.idea/
 
 # Unity3D generated meta files
 *.pidb.meta
@@ -58,3 +62,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# macOS DS_Store file
+.DS_Store
