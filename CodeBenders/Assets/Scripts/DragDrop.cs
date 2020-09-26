@@ -11,13 +11,16 @@ public class DragDrop : MonoBehaviour
     public bool isDragged = false;
     Vector2 initialPositionMouse;
     Vector2 initialPositionObject;
-    
- 
+
+
     // Update is called once per frame
     void Update()
     {
+        float tileWidth = GetComponent<SpriteRenderer>().bounds.size.x;
+        float tileHeight = GetComponent<SpriteRenderer>().bounds.size.y;
         if(isDragged)
         {
+          //Debug.Log("Mouse position" + Input.mousePosition);
             if(!smartDrag)
             {
                 transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -40,14 +43,14 @@ public class DragDrop : MonoBehaviour
             myPosition.y = Mathf.Clamp(myPosition.y, boundary.y, boundary.y * -1);
             transform.position = myPosition;
             */
-                 if (transform.position.x<1)
-                     transform.position = new Vector2(1.0f, Mathf.RoundToInt(transform.position.y));
-                 if (transform.position.y < 2)
-                     transform.position = new Vector2(Mathf.RoundToInt(transform.position.x), 2.0f);
-                 if (transform.position.y > 6)
-                     transform.position = new Vector2(Mathf.RoundToInt(transform.position.x), 6.0f);
-                 if (transform.position.x > 12)
-                     transform.position = new Vector2(12.0f, Mathf.RoundToInt(transform.position.y));
+                 if ((transform.position.x - tileWidth/2)<1.0)
+                     transform.position = new Vector2(1.0f+tileWidth/2, Mathf.RoundToInt(transform.position.y));
+                 if ((transform.position.y - tileHeight/2) < 2.0)
+                     transform.position = new Vector2(Mathf.RoundToInt(transform.position.x), 2.0f+tileHeight/2);
+                 if ((transform.position.y+tileHeight/2) > 8)
+                     transform.position = new Vector2(Mathf.RoundToInt(transform.position.x), 8.0f-tileHeight/2);
+                 if ((transform.position.x+tileWidth/2) > 13)
+                     transform.position = new Vector2(13.0f-tileWidth/2, Mathf.RoundToInt(transform.position.y));
         }
     }
 
@@ -63,7 +66,7 @@ public class DragDrop : MonoBehaviour
             }
             isDragged = true;
         }
-       
+
     }
     public void OnMouseUp()
     {
