@@ -20,6 +20,7 @@ public class DragDrop : MonoBehaviour
         float tileHeight = GetComponent<SpriteRenderer>().bounds.size.y;
         if(isDragged)
         {
+          //Debug.Log("Mouse position" + Input.mousePosition);
             if(!smartDrag)
             {
                 transform.position = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
