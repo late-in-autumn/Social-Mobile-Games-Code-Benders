@@ -658,10 +658,10 @@ PlayerSettings:
     m_VersionCode: 1
     m_VersionName: 
   apiCompatibilityLevel: 6
-  cloudProjectId: 
+  cloudProjectId: af2fb6cd-a137-4744-93ea-4fe6a0f6d3d6
   framebufferDepthMemorylessMode: 0
-  projectName: 
-  organizationId: 
+  projectName: CodeBenders
+  organizationId: usg_unity958
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0
