@@ -856,7 +856,7 @@ GameObject:
   - component: {fileID: 143510623}
   m_Layer: 0
   m_Name: target3 II
-  m_TagString: Enemy
+  m_TagString: EnemyP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1653,7 +1653,7 @@ GameObject:
   - component: {fileID: 268428294}
   m_Layer: 0
   m_Name: Vertical-3 II
-  m_TagString: BuildingBlock
+  m_TagString: BuildingBlockP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4546,7 +4546,7 @@ GameObject:
   - component: {fileID: 639479583}
   m_Layer: 0
   m_Name: target2 II
-  m_TagString: Enemy
+  m_TagString: EnemyP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6732,7 +6732,8 @@ MonoBehaviour:
   Battle: {fileID: 1174198896}
   buildingBlocks: []
   moveCam: {fileID: 774410621}
-  enemies: []
+  enemiesP1: []
+  enemiesP2: []
 --- !u!4 &902626941
 Transform:
   m_ObjectHideFlags: 0
@@ -12839,7 +12840,7 @@ GameObject:
   - component: {fileID: 1577514735}
   m_Layer: 0
   m_Name: Vertical-1 II
-  m_TagString: BuildingBlock
+  m_TagString: BuildingBlockP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13772,7 +13773,7 @@ GameObject:
   - component: {fileID: 1676206524}
   m_Layer: 0
   m_Name: Horizontal II
-  m_TagString: BuildingBlock
+  m_TagString: BuildingBlockP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15437,7 +15438,7 @@ GameObject:
   - component: {fileID: 1898303124}
   m_Layer: 0
   m_Name: Vertical-2 II
-  m_TagString: BuildingBlock
+  m_TagString: BuildingBlockP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18255,7 +18256,7 @@ GameObject:
   - component: {fileID: 2136929561}
   m_Layer: 0
   m_Name: target1 II
-  m_TagString: Enemy
+  m_TagString: EnemyP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

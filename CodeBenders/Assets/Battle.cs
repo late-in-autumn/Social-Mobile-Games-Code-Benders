@@ -23,7 +23,7 @@ public class Battle : MonoBehaviour
         buildingBlocks = FindObjectsOfType(typeof(Rigidbody2D)) as Rigidbody2D[];
         foreach (Rigidbody2D buildingBlock in buildingBlocks)
         {
-            if (buildingBlock.tag == "BuildingBlock")
+            if (buildingBlock.tag.Contains("BuildingBlock"))
             {
                 buildingBlock.constraints = RigidbodyConstraints2D.None;
             }

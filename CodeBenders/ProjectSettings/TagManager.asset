@@ -6,6 +6,8 @@ TagManager:
   tags:
   - BuildingBlock
   - Enemy
+  - BuildingBlockP2
+  - EnemyP2
   layers:
   - Default
   - TransparentFX
