@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
         yield return new WaitForSeconds(SpringJointReleaseDelay);
         _projectileSpringJoint.enabled = false;
         // indicate that the current projectile is no longer loaded
-        slingshot.gameObject.GetComponent<SlingshotLoader>().UnloadProjectileAfterFire();
+        StartCoroutine(slingshot.gameObject.GetComponent<SlingshotLoader>().ReloadProjectileCoroutine());
 
         // wait before further actions such as self-destruction
         yield return new WaitForSeconds(SpringJointPostDisableDelay);

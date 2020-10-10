@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -15,6 +16,8 @@ public class SlingshotLoader : MonoBehaviour
     private const float SpringJointDistance = 0.005f;
     // class-specific constant: the frequency of the spring joint
     private const float SpringJointFrequency = 1.5f;
+    // class-specific constant: time to wait in seconds for signaling reload
+    private const int SecondsBeforeUnload = 1;
 
     // the projectile that is being currently loaded
     private GameObject _projectile;
@@ -51,13 +54,19 @@ public class SlingshotLoader : MonoBehaviour
         slingshotSpringJoint.frequency = SpringJointFrequency;
         slingshotSpringJoint.dampingRatio = SpringJointDampingRatio;
         slingshotSpringJoint.breakForce = SpringJointBreakForce;
+        
+        // create the projectile component
+        var projectileComponent = _projectile.AddComponent<Projectile>();
+        projectileComponent.slingshot = _slingshotBody;
     }
 
     /// <summary>
-    /// Update the internal projectile reference after being fired.
+    /// Update the internal projectile reference and signal for reload after each firing.
     /// </summary>
-    public void UnloadProjectileAfterFire()
+    public IEnumerator ReloadProjectileCoroutine()
     {
+        yield return new WaitForSeconds(SecondsBeforeUnload);
         _projectile = null;
+        GetComponent<ProjectileGenerator>().newProjectileNeeded = true;
     }
 }

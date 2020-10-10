@@ -8700,6 +8700,7 @@ GameObject:
   - component: {fileID: 1126442249}
   - component: {fileID: 1126442248}
   - component: {fileID: 1126442251}
+  - component: {fileID: 1126442252}
   m_Layer: 0
   m_Name: Slingshot (1)
   m_TagString: Untagged
@@ -8806,6 +8807,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialProjectile: {fileID: 126311304}
+--- !u!114 &1126442252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126442247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38b683d0b10e69488966ff2ffcad7ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needReload: 0
+  projectileSprite: {fileID: 21300000, guid: 31ef2b54bedf69746b832114ff05fbf7, type: 3}
+  projectileSortingOrder: 2
+  projectColliderRadius: 0.305
+  projectileMass: 2
+  projectileLinearDrag: 0
+  projectileAngularDrag: 0.05
+  projectileGravityScale: 1
 --- !u!1 &1130269346
 GameObject:
   m_ObjectHideFlags: 0
@@ -9504,6 +9525,7 @@ GameObject:
   - component: {fileID: 1204550748}
   - component: {fileID: 1204550747}
   - component: {fileID: 1204550750}
+  - component: {fileID: 1204550751}
   m_Layer: 0
   m_Name: Slingshot
   m_TagString: Untagged
@@ -9610,6 +9632,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialProjectile: {fileID: 2027330320}
+--- !u!114 &1204550751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204550746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e38b683d0b10e69488966ff2ffcad7ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  needReload: 0
+  projectileSprite: {fileID: 21300000, guid: 31ef2b54bedf69746b832114ff05fbf7, type: 3}
+  projectileSortingOrder: 2
+  projectColliderRadius: 0.305
+  projectileMass: 2
+  projectileLinearDrag: 0
+  projectileAngularDrag: 0.05
+  projectileGravityScale: 1
 --- !u!1 &1211204163
 GameObject:
   m_ObjectHideFlags: 0
