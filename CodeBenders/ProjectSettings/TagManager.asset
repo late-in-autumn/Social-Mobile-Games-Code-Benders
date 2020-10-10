@@ -6,6 +6,11 @@ TagManager:
   tags:
   - BuildingBlock
   - Enemy
+  - pl1
+  - pl2
+  - Menu
+  - DisplayPl1
+  - DisplayPl2
   layers:
   - Default
   - TransparentFX
