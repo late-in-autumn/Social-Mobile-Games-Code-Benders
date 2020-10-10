@@ -1,13 +1,12 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 /// <summary>
 /// Allows simple reloading of the slingshot with new projectiles.
 /// </summary>
 public class SlingshotLoader : MonoBehaviour
 {
-    // class-specific constant: the name of the projectile that is initially loaded to the slingshot
-    private const string InitialProjectileName = "Projectile";
     // class-specific constant: the break force of the spring joint
     private const float SpringJointBreakForce = Single.PositiveInfinity;
     // class-specific constant: the damping ratio of the spring joint
@@ -22,13 +21,15 @@ public class SlingshotLoader : MonoBehaviour
     // the rigidbody component of the slingshot itself
     private Rigidbody2D _slingshotBody;
 
+    /// <summary>
+    /// The initial projectile object. Will be removed in the future.
+    /// </summary>
+    public GameObject initialProjectile;
+
     // called before the first frame update
     private void Start()
     {
-        // assumes that initially the slingshot is loaded with a projectile
-        _projectile = GameObject.Find(InitialProjectileName) ?
-            GameObject.Find(InitialProjectileName) :
-            throw new UnityException("Initial projectile not found!");
+        _projectile = initialProjectile;
         _slingshotBody = GetComponent<Rigidbody2D>();
     }
     
