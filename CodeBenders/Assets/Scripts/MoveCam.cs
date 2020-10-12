@@ -10,13 +10,12 @@ public class MoveCam : MonoBehaviour
     Transform currentView;
     public int[] sizes;
     int currentSize;
-    public bool buildMode = true;
+    public int buildMode = 0;
 
     // Start is called before the first frame update
     void Start()
     {
-        currentView = views[1];
-        currentSize = sizes[1];
+        SwitchCameraMode(1);
     }
 
     // Update is called once per frame
@@ -24,7 +23,8 @@ public class MoveCam : MonoBehaviour
     {
         /* Manual Camera Switching*/
          
-        if(Input.GetKeyDown(KeyCode.Alpha1)) {
+/*
+         if(Input.GetKeyDown(KeyCode.Alpha1)) {
             currentView = views[0];
             currentSize = sizes[0];
         }
@@ -32,7 +32,8 @@ public class MoveCam : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Alpha2)) {
             currentView = views[1];
             currentSize = sizes[1];
-        }
+        } 
+*/
         
     }
 
@@ -42,23 +43,38 @@ public class MoveCam : MonoBehaviour
         Camera.main.orthographicSize = Mathf.MoveTowards(Camera.main.orthographicSize, currentSize, Time.deltaTime * transitionSpeed);
     }
 
-    public void EnterBuildMode()
-    {
-        if (buildMode != true)
-            buildMode = true;
+    public void SwitchCameraMode(int mode){
+        buildMode = mode;
+        foreach(Transform t in views){
+            Debug.Log(t.ToString());
+        }
+        currentView = views[mode];
+        currentSize = sizes[mode];
+    }
+
+    /* Legacy Code
+    public void Player1BuildMode(){
+        buildMode = 1;
 
         currentView = views[1];
         currentSize = sizes[1];
 
     }
 
-    public void ExitBuildMode()
-    {
-        if (buildMode != false)
-            buildMode = false;
+    public void Player2BuildMode(){
+        buildMode = 2;
+
+        currentView = views[2];
+        currentSize = sizes[2];
+    }
+
+    public void BattleMode(){
+        buildMode = 0;
 
         currentView = views[0];
         currentSize = sizes[0];
-    }
+
+    } 
+    */
 
 }
