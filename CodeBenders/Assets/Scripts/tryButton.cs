@@ -52,7 +52,7 @@ public class tryButton : MonoBehaviour
                 enemiesP1 = GameObject.FindGameObjectsWithTag("Enemy");
                 foreach(GameObject enemy in enemiesP1)
                 {
-                    enemy.GetComponent<Enemy>().enabled = true;
+                    enemy.GetComponent<Enemy1>().enabled = true;
                     enemy.GetComponent<DragDrop>().enabled = false;
 
                 }
@@ -61,7 +61,7 @@ public class tryButton : MonoBehaviour
                 enemiesP2 = GameObject.FindGameObjectsWithTag("EnemyP2");
                 foreach(GameObject enemy in enemiesP2)
                 {
-                    enemy.GetComponent<Enemy>().enabled = true;
+                    enemy.GetComponent<Enemy2>().enabled = true;
                     enemy.GetComponent<DragDrop>().enabled = false;
                 }
                 moveCam.SwitchCameraMode(0);
