@@ -18,42 +18,56 @@ public class tryButton : MonoBehaviour
     public MoveCam moveCam;
     public GameObject[] enemiesP1;
     public GameObject[] enemiesP2;
+    bool player2Build = false;
 
     void Start()
     {
         Battle.onClick.AddListener(TaskOnClick);
 
+
     }
 
     void TaskOnClick()
-    {
-        //Output this to console when Button1 or Button3 is clicked
-        //Debug.Log("You have clicked the button!");
-        buildingBlocks = FindObjectsOfType(typeof(Rigidbody2D)) as Rigidbody2D[];
-        foreach (Rigidbody2D buildingBlock in buildingBlocks)
-        {
-            if (buildingBlock.tag.Contains("BuildingBlock"))
-            {
-                buildingBlock.constraints = RigidbodyConstraints2D.None;
-            }
-        }
-        // enable enemies for player 1
-        enemiesP1 = GameObject.FindGameObjectsWithTag("Enemy");
-        foreach(GameObject enemy in enemiesP1)
-        {
-            enemy.GetComponent<Enemy>().enabled = true;
-            enemy.GetComponent<DragDrop>().enabled = false;
+    {   
+        switch(player2Build){
+            case false:
+                GetComponentInChildren<Text>().text = "Start Battle!";
 
+                player2Build = true;
+                moveCam.SwitchCameraMode(2);
+                break;
+
+            case true:
+                //Output this to console when Button1 or Button3 is clicked
+                //Debug.Log("You have clicked the button!");
+                buildingBlocks = FindObjectsOfType(typeof(Rigidbody2D)) as Rigidbody2D[];
+                foreach (Rigidbody2D buildingBlock in buildingBlocks)
+                {
+                    if (buildingBlock.tag.Contains("BuildingBlock"))
+                    {
+                        buildingBlock.constraints = RigidbodyConstraints2D.None;
+                    }
+                }
+                // enable enemies for player 1
+                enemiesP1 = GameObject.FindGameObjectsWithTag("Enemy");
+                foreach(GameObject enemy in enemiesP1)
+                {
+                    enemy.GetComponent<Enemy>().enabled = true;
+                    enemy.GetComponent<DragDrop>().enabled = false;
+
+                }
+                // enable enemies for player 2
+                // **should be moved till after 2nd player build phase**
+                enemiesP2 = GameObject.FindGameObjectsWithTag("EnemyP2");
+                foreach(GameObject enemy in enemiesP2)
+                {
+                    enemy.GetComponent<Enemy>().enabled = true;
+                    enemy.GetComponent<DragDrop>().enabled = false;
+                }
+                moveCam.SwitchCameraMode(0);
+                break;
         }
-        // enable enemies for player 2
-        // **should be moved till after 2nd player build phase**
-        enemiesP2 = GameObject.FindGameObjectsWithTag("EnemyP2");
-        foreach(GameObject enemy in enemiesP2)
-        {
-            enemy.GetComponent<Enemy>().enabled = true;
-            enemy.GetComponent<DragDrop>().enabled = false;
-        }
-        moveCam.ExitBuildMode();
+
     }
 
 }
