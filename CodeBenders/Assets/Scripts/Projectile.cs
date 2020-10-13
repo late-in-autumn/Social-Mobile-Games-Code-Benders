@@ -13,6 +13,16 @@ public class Projectile : MonoBehaviour
     // class-specific constant: the delay after release to disable SpringJoint2D component
     private const float SpringJointReleaseDelay = 0.15f;
 
+    /// <summary>
+    /// Whether we are allowed firing the projectile.
+    /// </summary>
+    public bool allowFiring;
+    
+    /// <summary>
+    /// The rigidbody component of the slingshot.
+    /// </summary>
+    public Rigidbody2D slingshot;
+    
     // whether the projectile is being dragged by the user
     private bool _beingDragged;
     // the main camera
@@ -21,11 +31,6 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D _projectileBody;
     // the spring joint of the projectile itself
     private SpringJoint2D _projectileSpringJoint;
-    
-    /// <summary>
-    /// The rigidbody component of the slingshot.
-    /// </summary>
-    public Rigidbody2D slingshot;
 
     // coroutine to simulate actual slingshot firing of the projectile
     private IEnumerator FireCoroutine()
@@ -44,6 +49,9 @@ public class Projectile : MonoBehaviour
     // event trigger for mouse click (left button down, also touch events on phones)
     private void OnMouseDown()
     {
+        // short circuit if one is not allowed to fire
+        if (!allowFiring) return;
+        
         _beingDragged = true;
         // this allow the projectile to be dragged
         _projectileBody.isKinematic = true;
@@ -52,6 +60,9 @@ public class Projectile : MonoBehaviour
     // event trigger for mouse release (also touch events on phones)
     private void OnMouseUp()
     {
+        // short circuit if one is not allowed to fire
+        if (!allowFiring) return;
+        
         _beingDragged = false;
         // this allows the projectile to be controlled by the spring again, simulating a slingshot
         _projectileBody.isKinematic = false;

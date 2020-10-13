@@ -1,25 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MoveCam : MonoBehaviour
 {
 
     public Transform[] views;
     public float transitionSpeed;
-    Transform currentView;
+    private Transform currentView;
     public int[] sizes;
-    int currentSize;
+    private int currentSize;
     public int buildMode = 0;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         SwitchCameraMode(1);
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         /* Manual Camera Switching*/
          
@@ -37,7 +35,7 @@ public class MoveCam : MonoBehaviour
         
     }
 
-    void LateUpdate()
+    private void LateUpdate()
     {
         transform.position = Vector3.Lerp(transform.position, currentView.position, Time.deltaTime * transitionSpeed);
         Camera.main.orthographicSize = Mathf.MoveTowards(Camera.main.orthographicSize, currentSize, Time.deltaTime * transitionSpeed);

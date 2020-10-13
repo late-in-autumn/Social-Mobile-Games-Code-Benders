@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Battle : MonoBehaviour
@@ -9,7 +7,8 @@ public class Battle : MonoBehaviour
     public string pl2;
     // Start is called before the first frame update
     public Rigidbody2D[] buildingBlocks;
-    void Start()
+
+    private void Start()
     {
         pl1 = GameObject.FindWithTag("pl1").GetComponent<InputField>().text;
         pl2 = GameObject.FindWithTag("pl2").GetComponent<InputField>().text;
@@ -20,7 +19,7 @@ public class Battle : MonoBehaviour
 
     }
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
 
     }

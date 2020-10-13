@@ -17,6 +17,10 @@ TagManager:
   - Player2 Target
   - gameOver
   - winMessage
+  - SlingshotP1
+  - SlingshotP2
+  - ProjectileP1
+  - ProjectileP2
   layers:
   - Default
   - TransparentFX

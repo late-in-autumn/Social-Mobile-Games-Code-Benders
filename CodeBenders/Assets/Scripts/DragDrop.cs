@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class DragDrop : MonoBehaviour
 {
@@ -9,12 +7,12 @@ public class DragDrop : MonoBehaviour
     public bool smartDrag = true;
     public bool isDraggable = true;
     public bool isDragged = false;
-    Vector2 initialPositionMouse;
-    Vector2 initialPositionObject;
+    private Vector2 initialPositionMouse;
+    private Vector2 initialPositionObject;
 
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         float tileWidth = GetComponent<SpriteRenderer>().bounds.size.x;
         float tileHeight = GetComponent<SpriteRenderer>().bounds.size.y;
