@@ -28,10 +28,8 @@ public class DragDrop : MonoBehaviour
             {
                 transform.position = initialPositionObject + (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition) - initialPositionMouse;
             }
-            if(snapToGrid)
-            {
-                transform.position = new Vector2(Mathf.RoundToInt(transform.position.x/gridSize)*gridSize, Mathf.RoundToInt(transform.position.y/gridSize)*gridSize);
-            }
+            // Constrains Player 1's objects to the grid
+            // Takes into account grid's offset in coordinate system
             if(gameObject.tag == "BuildingBlock" || gameObject.tag == "Enemy")
             {
               if ((transform.position.x - tileWidth/2)<-17.15)
@@ -43,6 +41,7 @@ public class DragDrop : MonoBehaviour
               if ((transform.position.x+tileWidth/2) > -8.15)
                 transform.position = new Vector2(-8.15f-tileWidth/2, Mathf.RoundToInt(transform.position.y));
             }
+            // Constrains Player 2's objects to the grid
             else
             {
               if ((transform.position.x - tileWidth/2)<11.4)
@@ -73,6 +72,43 @@ public class DragDrop : MonoBehaviour
     }
     public void OnMouseUp()
     {
+        if(snapToGrid)
+        {
+            // Snapping Player 1's objects to grid
+            // takes into account the grid's offset from the coordinate system
+            if(gameObject.tag == "BuildingBlock" || gameObject.tag == "Enemy")
+            {
+              if (transform.position.x - (int) transform.position.x < 0.45)
+                if (transform.position.y - (int) transform.position.y < 0.15 || transform.position.y - (int) transform.position.y > 0.65)
+                  transform.position = new Vector2(Mathf.Floor(transform.position.x) + 0.335f, Mathf.RoundToInt(transform.position.y) + 0.375f);
+                else
+                  transform.position = new Vector2(Mathf.Floor(transform.position.x) + 0.335f, Mathf.Floor(transform.position.y) + 0.375f);
+              else if (transform.position.x - (int) transform.position.x > 0.95)
+                if (transform.position.y - (int) transform.position.y < 0.15 || transform.position.y - (int) transform.position.y > 0.65)
+                  transform.position = new Vector2(Mathf.Floor(transform.position.x) - 0.665f, Mathf.RoundToInt(transform.position.y) + 0.375f);
+                else
+                  transform.position = new Vector2(Mathf.Floor(transform.position.x) - 0.665f, Mathf.Floor(transform.position.y) + 0.375f);
+              else
+                if (transform.position.y - (int) transform.position.y < 0.15 || transform.position.y - (int) transform.position.y > 0.65)
+                  transform.position = new Vector2(Mathf.Ceil(transform.position.x) + 0.335f, Mathf.RoundToInt(transform.position.y) + 0.375f);
+                else
+                  transform.position = new Vector2(Mathf.Ceil(transform.position.x) + 0.335f, Mathf.Floor(transform.position.y) + 0.375f);
+            }
+            // Snapping Player 2's objects to grid
+            else
+            {
+              if (transform.position.x - (int) transform.position.x < 0.5)
+                if (transform.position.y - (int) transform.position.y < 0.15 || transform.position.y - (int) transform.position.y > 0.65)
+                  transform.position = new Vector2(Mathf.Floor(transform.position.x - 1.0f) + 0.9f, Mathf.RoundToInt(transform.position.y) + 0.375f);
+                else
+                  transform.position = new Vector2(Mathf.Floor(transform.position.x - 1.0f) + 0.9f, Mathf.Floor(transform.position.y) + 0.375f);
+              else
+                if (transform.position.y - (int) transform.position.y < 0.15 || transform.position.y - (int) transform.position.y > 0.65)
+                  transform.position = new Vector2(Mathf.Floor(transform.position.x) + 0.9f, Mathf.RoundToInt(transform.position.y) + 0.375f);
+                else
+                  transform.position = new Vector2(Mathf.Floor(transform.position.x) + 0.9f, Mathf.Floor(transform.position.y) + 0.375f);
+            }
+        }
         isDragged = false;
     }
 }
