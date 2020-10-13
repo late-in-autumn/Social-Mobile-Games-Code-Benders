@@ -11,6 +11,12 @@ TagManager:
   - Menu
   - DisplayPl1
   - DisplayPl2
+  - EnemyP2
+  - BuildingBlockP2
+  - Player1 Target
+  - Player2 Target
+  - gameOver
+  - winMessage
   layers:
   - Default
   - TransparentFX
@@ -20,7 +26,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Game won
   - 
   - 
   - 
@@ -47,7 +53,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: New Layer
+    locked: 1
+  - name: Game won
     uniqueID: 2512363891
     locked: 0

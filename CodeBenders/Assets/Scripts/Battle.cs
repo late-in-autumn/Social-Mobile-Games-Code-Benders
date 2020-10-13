@@ -14,6 +14,7 @@ public class Battle : MonoBehaviour
         pl1 = GameObject.FindWithTag("pl1").GetComponent<InputField>().text;
         pl2 = GameObject.FindWithTag("pl2").GetComponent<InputField>().text;
         GameObject.FindWithTag("Menu").GetComponent<Canvas>().enabled = false;
+        GameObject.FindWithTag("gameOver").GetComponent<Canvas>().enabled = false;
         GameObject.FindWithTag("DisplayPl1").GetComponent<Text>().text = pl1;
         GameObject.FindWithTag("DisplayPl2").GetComponent<Text>().text = pl2;
 
