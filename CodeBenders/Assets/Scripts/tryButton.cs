@@ -28,7 +28,7 @@ public class tryButton : MonoBehaviour
     }
 
     void TaskOnClick()
-    {   
+    {
         switch(player2Build){
             case false:
                 GetComponentInChildren<Text>().text = "Start Battle!";
@@ -67,7 +67,6 @@ public class tryButton : MonoBehaviour
                 moveCam.SwitchCameraMode(0);
                 break;
         }
-
     }
 
 }
