@@ -17,6 +17,8 @@ TagManager:
   - Player2 Target
   - gameOver
   - winMessage
+  - PlayerTurn
+  - Battle
   layers:
   - Default
   - TransparentFX

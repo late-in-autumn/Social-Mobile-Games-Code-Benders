@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Behavior script for a single slingshot projectile.
@@ -26,6 +27,9 @@ public class Projectile : MonoBehaviour
     /// The rigidbody component of the slingshot.
     /// </summary>
     public Rigidbody2D slingshot;
+    public string player1, player2;
+    public string current_player;
+    public GameObject sling;
 
     // coroutine to simulate actual slingshot firing of the projectile
     private IEnumerator FireCoroutine()
@@ -38,6 +42,15 @@ public class Projectile : MonoBehaviour
 
         // wait before further actions such as self-destruction
         yield return new WaitForSeconds(SpringJointPostDisableDelay);
+        
+        //Change player name on display
+        current_player = GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text;
+        if (current_player == player1) {
+            GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text = player2;
+        }
+        else {
+            GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text = player1;
+        }
         Destroy(gameObject);
     }
     
@@ -66,6 +79,9 @@ public class Projectile : MonoBehaviour
         _mainCamera = Camera.main;
         _projectileBody = GetComponent<Rigidbody2D>();
         _projectileSpringJoint = GetComponent<SpringJoint2D>();
+        player1 = GameObject.FindWithTag("pl1").GetComponent<InputField>().text + "'s turn";
+        player2 = GameObject.FindWithTag("pl2").GetComponent<InputField>().text + "'s turn";
+
     }
 
     // called once per frame
