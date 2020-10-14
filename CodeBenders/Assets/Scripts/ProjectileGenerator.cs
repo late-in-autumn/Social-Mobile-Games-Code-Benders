@@ -7,9 +7,19 @@ using UnityEngine;
 public class ProjectileGenerator : MonoBehaviour
 {
     /// <summary>
+    /// Whether we allow reloading.
+    /// </summary>
+    public bool allowReloading;
+    
+    /// <summary>
     /// Whether a new projectile is needed.
     /// </summary>
-    public bool newProjectileNeeded = false;
+    public bool newProjectileNeeded;
+    
+    /// <summary>
+    /// The tag that indicates which player the projectile belongs to.
+    /// </summary>
+    public string projectileTag;
     
     /// <summary>
     /// The sprite for the generated projectile.
@@ -71,6 +81,8 @@ public class ProjectileGenerator : MonoBehaviour
         // include a GUID in the name so no name collision could be possible
         var projectile = new GameObject("Projectile (" + Guid.NewGuid() + ")", 
             new []{typeof(CircleCollider2D), typeof(SpriteRenderer), typeof(Rigidbody2D)});
+        // tag the projectile
+        projectile.tag = projectileTag;
         // place the projectile in the same hierarchy as the slingshot
         projectile.transform.parent = transform.parent;
         
@@ -88,15 +100,12 @@ public class ProjectileGenerator : MonoBehaviour
     }
     
     //called before the first frame update
-    private void Start()
-    {
-        _slingshotLoader = GetComponent<SlingshotLoader>();
-    }
+    private void Start() => _slingshotLoader = GetComponent<SlingshotLoader>();
 
     // called once per frame
     private void Update()
     {
-        if (!newProjectileNeeded) return; // short circuit for not needing a new projectile
+        if (!allowReloading || !newProjectileNeeded) return; // short circuit for not needing a new projectile
         
         // currently this script handles invocation and reloading, but this should be moved out to somewhere else
         _slingshotLoader.LoadProjectile(

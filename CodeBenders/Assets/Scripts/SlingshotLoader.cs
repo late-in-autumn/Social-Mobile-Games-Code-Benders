@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 /// <summary>
 /// Allows simple reloading of the slingshot with new projectiles.
@@ -19,36 +18,27 @@ public class SlingshotLoader : MonoBehaviour
     // class-specific constant: time to wait in seconds for signaling reload
     private const int SecondsBeforeUnload = 1;
 
-    // the projectile that is being currently loaded
-    private GameObject _projectile;
+    /// <summary>
+    /// The currently loaded projectile.
+    /// </summary>
+    public GameObject projectile;
+    
     // the rigidbody component of the slingshot itself
     private Rigidbody2D _slingshotBody;
 
     /// <summary>
-    /// The initial projectile object. Will be removed in the future.
-    /// </summary>
-    public GameObject initialProjectile;
-
-    // called before the first frame update
-    private void Start()
-    {
-        _projectile = initialProjectile;
-        _slingshotBody = GetComponent<Rigidbody2D>();
-    }
-    
-    /// <summary>
     /// Load the slingshot with a new projectile.
     /// </summary>
-    /// <param name="projectile">The projectile to be loaded (w/o the spring joint component).</param>
-    public void LoadProjectile(GameObject projectile)
+    /// <param name="projectileToLoad">The projectile to be loaded (w/o the spring joint component).</param>
+    public void LoadProjectile(GameObject projectileToLoad)
     {
         // update the internal reference
-        _projectile = projectile ? projectile : throw new ArgumentNullException(nameof(projectile));
+        projectile = projectileToLoad ? projectileToLoad : throw new ArgumentNullException(nameof(projectileToLoad));
         // position the projectile
-        _projectile.transform.position = transform.position;
+        projectile.transform.position = transform.position;
 
         // create the spring joint component for the slingshot
-        var slingshotSpringJoint = _projectile.AddComponent<SpringJoint2D>();
+        var slingshotSpringJoint = projectile.AddComponent<SpringJoint2D>();
         slingshotSpringJoint.connectedBody = _slingshotBody;
         slingshotSpringJoint.distance = SpringJointDistance;
         slingshotSpringJoint.frequency = SpringJointFrequency;
@@ -56,7 +46,8 @@ public class SlingshotLoader : MonoBehaviour
         slingshotSpringJoint.breakForce = SpringJointBreakForce;
         
         // create the projectile component
-        var projectileComponent = _projectile.AddComponent<Projectile>();
+        var projectileComponent = projectile.AddComponent<Projectile>();
+        projectileComponent.allowFiring = true; // for now we always allow firing
         projectileComponent.slingshot = _slingshotBody;
     }
 
@@ -66,7 +57,10 @@ public class SlingshotLoader : MonoBehaviour
     public IEnumerator ReloadProjectileCoroutine()
     {
         yield return new WaitForSeconds(SecondsBeforeUnload);
-        _projectile = null;
+        projectile = null;
         GetComponent<ProjectileGenerator>().newProjectileNeeded = true;
     }
+    
+    // called before the first frame update
+    private void Start() => _slingshotBody = GetComponent<Rigidbody2D>();
 }
