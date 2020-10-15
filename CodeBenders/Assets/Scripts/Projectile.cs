@@ -46,15 +46,11 @@ public class Projectile : MonoBehaviour
 
         // wait before further actions such as self-destruction
         yield return new WaitForSeconds(SpringJointPostDisableDelay);
+
         //Change player name on display
         current_player = GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text;
         GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text = (current_player == player1) ? player2 : player1;
-        // if (current_player == player1) {
-        //     GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text = player2;
-        // }
-        // else {
-        //     GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text = player1;
-        // }
+        
         Destroy(gameObject);
     }
     
