@@ -15,6 +15,7 @@ public class Enemy2 : MonoBehaviour {
 	{
         pl1 = GameObject.FindWithTag("pl1").GetComponent<InputField>().text;
 		EnemiesAlive++;
+		GameObject.Find("Telemetry").SendMessage("SetPlayerTwoTargets", EnemiesAlive);
 	}
 
 	void OnCollisionEnter2D (Collision2D colInfo)
@@ -30,6 +31,7 @@ public class Enemy2 : MonoBehaviour {
 		//Instantiate(deathEffect, transform.position, Quaternion.identity);
 
 		EnemiesAlive--;
+		GameObject.Find("Telemetry").SendMessage("SetPlayerTwoTargets", EnemiesAlive);
 		if (EnemiesAlive <= 0)
 			Debug.Log("LEVEL WON by Player 1!");
 
