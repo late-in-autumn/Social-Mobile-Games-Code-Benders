@@ -6584,6 +6584,7 @@ MonoBehaviour:
   battle: {fileID: 1174198896}
   buildingBlocks: []
   moveCam: {fileID: 774410621}
+  dragDrop: {fileID: 533594181}
   enemiesP1: []
   enemiesP2: []
 --- !u!4 &902626941
