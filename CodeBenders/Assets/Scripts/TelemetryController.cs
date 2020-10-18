@@ -40,7 +40,8 @@ public class TelemetryController : MonoBehaviour
             $"Player 1 used {_playerOneProjectiles} projectile(s); Player 2 used {_playerTwoProjectiles} projectile(s)."));
         
         // upload the collected data points
-        UploadData();
+        var result = UploadData();
+        Debug.Log($"Telemetry submission result: {result.ToString()}");
     }
     
     // called before the first frame update
@@ -51,7 +52,7 @@ public class TelemetryController : MonoBehaviour
     }
     
     // upload the telemetry data as a Unity Analytics custom event
-    private void UploadData() => 
+    private AnalyticsResult UploadData() => 
         Analytics.CustomEvent("GameOver", new Dictionary<string, object> 
         {
             { "Winner", Enum.GetName(typeof(PlayersEnum), _winner) },
