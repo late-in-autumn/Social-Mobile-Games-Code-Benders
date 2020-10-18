@@ -32,8 +32,6 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D _projectileBody;
     // the spring joint of the projectile itself
     private SpringJoint2D _projectileSpringJoint;
-    //names of players
-    public string player1, player2, current_player;
 
     // coroutine to simulate actual slingshot firing of the projectile
     private IEnumerator FireCoroutine()
@@ -48,9 +46,7 @@ public class Projectile : MonoBehaviour
         yield return new WaitForSeconds(SpringJointPostDisableDelay);
 
         //Change player name on display
-        current_player = GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text;
-        GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text = (current_player == player1) ? player2 : player1;
-        
+        GameObject.FindWithTag("PlayerTurn").SendMessage("changePlayer", gameObject);
         Destroy(gameObject);
     }
     
@@ -85,8 +81,6 @@ public class Projectile : MonoBehaviour
         _mainCamera = Camera.main;
         _projectileBody = GetComponent<Rigidbody2D>();
         _projectileSpringJoint = GetComponent<SpringJoint2D>();
-        player1 = GameObject.FindWithTag("pl1").GetComponent<InputField>().text + "'s turn";
-        player2 = GameObject.FindWithTag("pl2").GetComponent<InputField>().text + "'s turn";
     }
 
     // called once per frame

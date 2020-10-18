@@ -8,11 +8,13 @@ public class DisplayPlayer : MonoBehaviour
     
     // Start is called before the first frame update
     public GameObject show;
-    public string playername;
+    public string player1, player2;
     void Start()
     {
         show = GameObject.FindGameObjectWithTag("PlayerTurn");
         show.SetActive(false);
+        player1 = GameObject.FindWithTag("pl1").GetComponent<InputField>().text + "'s turn";
+        player2 = GameObject.FindWithTag("pl2").GetComponent<InputField>().text + "'s turn";
     }
 
     // Update is called once per frame
@@ -22,7 +24,7 @@ public class DisplayPlayer : MonoBehaviour
     }
 
     public void display() {
-        
+
         GameObject battle;
         battle = GameObject.FindWithTag("Battle");
 
@@ -30,8 +32,11 @@ public class DisplayPlayer : MonoBehaviour
             show.SetActive(true);
         }
 
-        playername = GameObject.FindWithTag("pl1").GetComponent<InputField>().text;
-        show.GetComponent<Text>().text = playername + "'s turn";
-        
+        show.GetComponent<Text>().text = player1;
+            
+    }
+
+    public void changePlayer(GameObject projectile) {
+        GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text = (projectile.tag == "ProjectileP1") ? player2 : player1;        
     }
 }
