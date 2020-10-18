@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -38,6 +36,7 @@ public class Enemy1 : MonoBehaviour {
 		Destroy(gameObject);
 
 		if(EnemiesAlive == 0) {
+			GameObject.Find("Telemetry").SendMessage("GameOver", PlayersEnum.PlayerTwo);
 			GameObject.FindWithTag("gameOver").GetComponent<Canvas>().enabled = true;
 			GameObject.FindWithTag("winMessage").GetComponent<Text>().text = pl2 + " Won!";
 		}
