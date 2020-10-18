@@ -8,12 +8,28 @@ using UnityEngine.Analytics;
 /// </summary>
 public class TelemetryController : MonoBehaviour
 {
+    // the number of targets that survived for player 1
+    private int _playerOneTargets;
+    // the number of targets that survived for player 2
+    private int _playerTwoTargets;
     // the number of projectiles consumed by player 1
     private int _playerOneProjectiles;
     // the number of projectiles consumed by player 2
     private int _playerTwoProjectiles;
     // the winner of the game
     private PlayersEnum _winner;
+
+    /// <summary>
+    /// Set the number of targets for player 1.
+    /// </summary>
+    /// <param name="numOfTargets">Number of targets.</param>
+    public void SetPlayerOneTargets(int numOfTargets) => _playerOneTargets = numOfTargets;
+
+    /// <summary>
+    /// Set the number of targets for player 2.
+    /// </summary>
+    /// <param name="numOfTargets">Number of targets</param>
+    public void SetPlayerTwoTargets(int numOfTargets) => _playerTwoTargets = numOfTargets;
     
     /// <summary>
     /// Increase the number of projectiles consumed by player 1 by 1.
@@ -38,6 +54,8 @@ public class TelemetryController : MonoBehaviour
         Debug.Log($"{Enum.GetName(typeof(PlayersEnum), _winner)} won, sending telemetry data...");
         Debug.Log((
             $"Player 1 used {_playerOneProjectiles} projectile(s); Player 2 used {_playerTwoProjectiles} projectile(s)."));
+        Debug.Log(
+            $"Player 1 has {_playerOneTargets} target(s) surviving; Player 2 has {_playerTwoTargets} target(s) surviving.");
         
         // upload the collected data points
         var result = UploadData();
@@ -57,7 +75,9 @@ public class TelemetryController : MonoBehaviour
         {
             { "Winner", Enum.GetName(typeof(PlayersEnum), _winner) },
             { "PlayerOneProjectiles", _playerOneProjectiles },
-            { "PlayerTwoProjectiles", _playerTwoProjectiles }
+            { "PlayerTwoProjectiles", _playerTwoProjectiles },
+            { "PlayerOneTargets", _playerOneTargets },
+            { "PlayerTwoTargets", _playerTwoTargets }
         });
 }
 
