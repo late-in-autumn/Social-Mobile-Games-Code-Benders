@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 /// <summary>
 /// Behavior script for a single slingshot projectile.
@@ -43,6 +44,9 @@ public class Projectile : MonoBehaviour
 
         // wait before further actions such as self-destruction
         yield return new WaitForSeconds(SpringJointPostDisableDelay);
+
+        //Change player name on display
+        GameObject.FindWithTag("PlayerTurn").SendMessage("changePlayer", gameObject);
         Destroy(gameObject);
     }
     
