@@ -30,6 +30,10 @@ public class ControlButton : MonoBehaviour
             case true:
                 //Output this to console when Button1 or Button3 is clicked
                 //Debug.Log("You have clicked the button!");
+
+                // Once 'Start Battle' Button has been Clicked, Disable the Button as it is no longer needed!
+                battle.gameObject.SetActive(false);
+
                 buildingBlocks = FindObjectsOfType(typeof(Rigidbody2D)) as Rigidbody2D[];
                 if (buildingBlocks != null)
                     foreach (Rigidbody2D buildingBlock in buildingBlocks)
