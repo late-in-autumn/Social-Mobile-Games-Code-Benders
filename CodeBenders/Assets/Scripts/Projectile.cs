@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class Projectile : MonoBehaviour
 {
     // class-specific constant: how far is the player allowed to drag the projectile
-    private const float MaxDragDistance = 3f;
+    private const float MaxDragDistance = 2f;
     // class-specific constant: the delay after disabling SpringJoin2D component for actions like self-destruction
     private const float SpringJointPostDisableDelay = 6f;
     // class-specific constant: the delay after release to disable SpringJoint2D component
@@ -18,12 +18,12 @@ public class Projectile : MonoBehaviour
     /// Whether we are allowed firing the projectile.
     /// </summary>
     public bool allowFiring;
-    
+
     /// <summary>
     /// The rigidbody component of the slingshot.
     /// </summary>
     public Rigidbody2D slingshot;
-    
+
     // whether the projectile is being dragged by the user
     private bool _beingDragged;
     // the main camera
@@ -49,13 +49,13 @@ public class Projectile : MonoBehaviour
         GameObject.FindWithTag("PlayerTurn").SendMessage("changePlayer", gameObject);
         Destroy(gameObject);
     }
-    
+
     // event trigger for mouse click (left button down, also touch events on phones)
     private void OnMouseDown()
     {
         // short circuit if one is not allowed to fire
         if (!allowFiring) return;
-        
+
         _beingDragged = true;
         // this allow the projectile to be dragged
         _projectileBody.isKinematic = true;
@@ -66,14 +66,14 @@ public class Projectile : MonoBehaviour
     {
         // short circuit if one is not allowed to fire
         if (!allowFiring) return;
-        
+
         _beingDragged = false;
         // this allows the projectile to be controlled by the spring again, simulating a slingshot
         _projectileBody.isKinematic = false;
         // activate the slingshot fire coroutine
         StartCoroutine(FireCoroutine());
     }
-    
+
     // called before the first frame update
     private void Start()
     {
@@ -88,7 +88,7 @@ public class Projectile : MonoBehaviour
     {
         // short circuit when the player is not or unable of dragging the projectile
         if (!_beingDragged || !_mainCamera) return;
-        
+
         // update the projectile location to reflect it being dragged
         var mousePosition = (Vector2)_mainCamera.ScreenToWorldPoint(Input.mousePosition);
         var slingshotPosition = slingshot.position;
