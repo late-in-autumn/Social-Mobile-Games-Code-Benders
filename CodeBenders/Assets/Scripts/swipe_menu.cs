@@ -11,7 +11,7 @@ public class swipe_menu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+          GameObject.FindWithTag("Menu").GetComponent<Canvas>().enabled = false;
     }
 
     // Update is called once per frame
