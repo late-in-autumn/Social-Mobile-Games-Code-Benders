@@ -9,6 +9,10 @@ public class swipe_menu : MonoBehaviour
     float scroll_pos = 0;
     float[]pos;
     // Start is called before the first frame update
+    void Awake() 
+    {
+        DontDestroyOnLoad(transform.gameObject);
+    }
     void Start()
     {
           GameObject.FindWithTag("Menu").GetComponent<Canvas>().enabled = false;
