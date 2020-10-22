@@ -9,6 +9,8 @@ public class ControlButton : MonoBehaviour
     public MoveCam moveCam;
     public GameObject[] enemiesP1;
     public GameObject[] enemiesP2;
+    public GameObject[] blocksP1;
+    public GameObject[] blocksP2;
     private bool _player2Build = false;
 
     private void Start()
@@ -28,6 +30,10 @@ public class ControlButton : MonoBehaviour
             case true:
                 //Output this to console when Button1 or Button3 is clicked
                 //Debug.Log("You have clicked the button!");
+
+                // Once 'Start Battle' Button has been Clicked, Disable the Button as it is no longer needed!
+                battle.gameObject.SetActive(false);
+
                 buildingBlocks = FindObjectsOfType(typeof(Rigidbody2D)) as Rigidbody2D[];
                 if (buildingBlocks != null)
                     foreach (Rigidbody2D buildingBlock in buildingBlocks)
@@ -46,7 +52,12 @@ public class ControlButton : MonoBehaviour
                     enemy.GetComponent<DragDrop>().enabled = false;
 
                 }
-                
+                blocksP1 = GameObject.FindGameObjectsWithTag("BuildingBlock");
+                foreach(GameObject block in blocksP1)
+                {
+                    block.GetComponent<DragDrop>().enabled = false;
+                }
+                                
                 // enable slingshot reload for player 1
                 GameObject.FindWithTag("SlingshotP1").SendMessage("EnableSlingshotReloading");
                 
@@ -58,11 +69,16 @@ public class ControlButton : MonoBehaviour
                     enemy.GetComponent<Enemy2>().enabled = true;
                     enemy.GetComponent<DragDrop>().enabled = false;
                 }
+                blocksP2 = GameObject.FindGameObjectsWithTag("BuildingBlockP2");
+                foreach(GameObject block in blocksP2)
+                {
+                    block.GetComponent<DragDrop>().enabled = false;
+                }
                 
                 // enable slingshot reload for player 2
                 GameObject.FindWithTag("SlingshotP2").SendMessage("EnableSlingshotReloading");
                 
-                moveCam.SwitchCameraMode(0);
+                moveCam.SwitchCameraMode(0);  
                 break;
         }
     }

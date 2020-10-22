@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 public class Enemy2 : MonoBehaviour {
@@ -17,6 +15,7 @@ public class Enemy2 : MonoBehaviour {
 	{
         pl1 = GameObject.FindWithTag("pl1").GetComponent<InputField>().text;
 		EnemiesAlive++;
+		GameObject.Find("Telemetry").SendMessage("SetPlayerTwoTargets", EnemiesAlive);
 	}
 
 	void OnCollisionEnter2D (Collision2D colInfo)
@@ -32,11 +31,13 @@ public class Enemy2 : MonoBehaviour {
 		//Instantiate(deathEffect, transform.position, Quaternion.identity);
 
 		EnemiesAlive--;
+		GameObject.Find("Telemetry").SendMessage("SetPlayerTwoTargets", EnemiesAlive);
 		if (EnemiesAlive <= 0)
 			Debug.Log("LEVEL WON by Player 1!");
 
 		Destroy(gameObject);
         if(EnemiesAlive == 0) {
+	        GameObject.Find("Telemetry").SendMessage("GameOver", PlayersEnum.PlayerOne);
 		    GameObject.FindWithTag("gameOver").GetComponent<Canvas>().enabled = true;
             GameObject.FindWithTag("winMessage").GetComponent<Text>().text = pl1 + " Won!";
         }

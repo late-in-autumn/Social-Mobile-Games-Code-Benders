@@ -21,6 +21,8 @@ TagManager:
   - SlingshotP2
   - ProjectileP1
   - ProjectileP2
+  - PlayerTurn
+  - Battle
   layers:
   - Default
   - TransparentFX
