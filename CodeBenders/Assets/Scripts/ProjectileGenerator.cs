@@ -79,7 +79,7 @@ public class ProjectileGenerator : MonoBehaviour
         float gravityScale)
     {
         // include a GUID in the name so no name collision could be possible
-        var projectile = new GameObject("Projectile (" + Guid.NewGuid() + ")", 
+        var projectile = new GameObject($"Projectile ({Guid.NewGuid()})", 
             new []{typeof(CircleCollider2D), typeof(SpriteRenderer), typeof(Rigidbody2D)});
         // tag the projectile
         projectile.tag = projectileTag;

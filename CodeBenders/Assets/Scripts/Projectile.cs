@@ -39,7 +39,12 @@ public class Projectile : MonoBehaviour
         // disable the SpringJoint2D component after some delay to allow the projectile to fly freely
         yield return new WaitForSeconds(SpringJointReleaseDelay);
         _projectileSpringJoint.enabled = false;
-        // indicate that the current projectile is no longer loaded
+        
+        // update the telemetry counter
+        GameObject.Find("Telemetry").SendMessage(
+            gameObject.tag.Equals("ProjectileP1") ? "PlayerOneFired" : "PlayerTwoFired");
+        
+        // start the slingshot reload coroutine
         StartCoroutine(slingshot.gameObject.GetComponent<SlingshotLoader>().ReloadProjectileCoroutine());
 
         // wait before further actions such as self-destruction
