@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
 
 /// <summary>
 /// Behavior script for a single slingshot projectile.
