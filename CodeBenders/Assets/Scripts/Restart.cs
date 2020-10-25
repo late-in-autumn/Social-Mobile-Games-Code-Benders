@@ -1,13 +1,13 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Component for restarting a game.
+/// </summary>
 public class Restart : MonoBehaviour
 {
-    // Start is called before the first frame update
-    public void RestartGame()
-    {
-        SceneManager.LoadScene("home");
-    }
-
-   
+    /// <summary>
+    /// Restarts a game.
+    /// </summary>
+    public void RestartGame() => SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 }
