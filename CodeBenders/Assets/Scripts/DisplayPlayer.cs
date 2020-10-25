@@ -54,7 +54,7 @@ public class DisplayPlayer : MonoBehaviour
     {
         Text i = show.GetComponent<Text>();
         float fadeInTime  = 1f;
-        float fadeOutTime = 3f;
+        float fadeOutTime = 1f;
 
         // First let the Text Fade In over Specified Fade-In Time
         i.color = new Color(i.color.r, i.color.g, i.color.b, 0);
