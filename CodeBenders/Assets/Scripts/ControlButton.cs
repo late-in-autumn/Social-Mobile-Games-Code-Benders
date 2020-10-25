@@ -48,7 +48,7 @@ public class ControlButton : MonoBehaviour
                 enemiesP1 = GameObject.FindGameObjectsWithTag("Enemy");
                 foreach(GameObject enemy in enemiesP1)
                 {
-                    enemy.GetComponent<Enemy1>().enabled = true;
+                    enemy.GetComponent<Enemy>().enabled = true;
                     enemy.GetComponent<DragDrop>().enabled = false;
 
                 }
@@ -66,7 +66,7 @@ public class ControlButton : MonoBehaviour
                 enemiesP2 = GameObject.FindGameObjectsWithTag("EnemyP2");
                 foreach(GameObject enemy in enemiesP2)
                 {
-                    enemy.GetComponent<Enemy2>().enabled = true;
+                    enemy.GetComponent<Enemy>().enabled = true;
                     enemy.GetComponent<DragDrop>().enabled = false;
                 }
                 blocksP2 = GameObject.FindGameObjectsWithTag("BuildingBlockP2");
