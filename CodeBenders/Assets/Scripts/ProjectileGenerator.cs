@@ -84,7 +84,7 @@ public class ProjectileGenerator : MonoBehaviour
         // tag the projectile
         projectile.tag = projectileTag;
         //scale the projectile
-        projectile.transform.localScale = new Vector3(2, 2, 2);
+        projectile.transform.localScale = new Vector3(2.45f, 2.45f, 2.45f);
         // place the projectile in the same hierarchy as the slingshot
         projectile.transform.parent = transform.parent;
 
