@@ -3,7 +3,26 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - BuildingBlock
+  - Enemy
+  - pl1
+  - pl2
+  - Menu
+  - DisplayPl1
+  - DisplayPl2
+  - EnemyP2
+  - BuildingBlockP2
+  - Player1 Target
+  - Player2 Target
+  - gameOver
+  - winMessage
+  - SlingshotP1
+  - SlingshotP2
+  - ProjectileP1
+  - ProjectileP2
+  - PlayerTurn
+  - Battle
   layers:
   - Default
   - TransparentFX
@@ -13,7 +32,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Game won
   - 
   - 
   - 
@@ -40,4 +59,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 1
+  - name: Game won
+    uniqueID: 2512363891
     locked: 0

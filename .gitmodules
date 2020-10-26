@@ -1,0 +1,4 @@
+[submodule "webgl-build"]
+	path = webgl-build
+	url = ../Social-Mobile-Games-Code-Benders-WebGL.git
+	branch = trunk
