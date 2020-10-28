@@ -42,15 +42,17 @@ public class Projectile : MonoBehaviour
         // update the telemetry counter
         GameObject.Find("Telemetry").SendMessage(
             gameObject.tag.Equals("ProjectileP1") ? "PlayerOneFired" : "PlayerTwoFired");
-        
-        // start the slingshot reload coroutine
-        StartCoroutine(slingshot.gameObject.GetComponent<SlingshotLoader>().ReloadProjectileCoroutine());
 
         // wait before further actions such as self-destruction
         yield return new WaitForSeconds(SpringJointPostDisableDelay);
 
-        //Change player name on display
+        // change player name on display
         GameObject.FindWithTag("PlayerTurn").SendMessage("changePlayer", gameObject);
+        
+        // enable the slingshot for the other side
+        GameObject.Find("PlayerTurn").SendMessage("EnableSlingshotForPlayer",
+            gameObject.tag.Equals("ProjectileP1") ? PlayersEnum.PlayerTwo : PlayersEnum.PlayerOne);
+        
         Destroy(gameObject);
     }
 

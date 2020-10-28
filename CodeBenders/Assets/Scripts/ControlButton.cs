@@ -59,6 +59,7 @@ public class ControlButton : MonoBehaviour
                 }
                                 
                 // enable slingshot reload for player 1
+                // only player 1 is enabled because player 1 goes first
                 GameObject.FindWithTag("SlingshotP1").SendMessage("EnableSlingshotReloading");
                 
                 // enable enemies for player 2
@@ -74,10 +75,7 @@ public class ControlButton : MonoBehaviour
                 {
                     block.GetComponent<DragDrop>().enabled = false;
                 }
-                
-                // enable slingshot reload for player 2
-                GameObject.FindWithTag("SlingshotP2").SendMessage("EnableSlingshotReloading");
-                
+
                 moveCam.SwitchCameraMode(0);  
                 break;
         }

@@ -49,6 +49,9 @@ public class SlingshotLoader : MonoBehaviour
         var projectileComponent = projectile.AddComponent<Projectile>();
         projectileComponent.allowFiring = true; // for now we always allow firing
         projectileComponent.slingshot = _slingshotBody;
+        
+        // disable reload after being loaded to prevent reloading during the other player's turn
+        GetComponent<ControlSlingshotFunctions>().DisableSlingshotReloading();
     }
 
     /// <summary>
