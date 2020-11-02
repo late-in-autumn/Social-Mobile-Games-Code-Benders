@@ -19,10 +19,10 @@ public class ControlButton : MonoBehaviour
     }
 
     private void TaskOnClick()
-    {   
+    {
         switch(_player2Build){
             case false:
-                GetComponentInChildren<Text>().text = "Start Battle!";
+                GameObject.FindWithTag("Battle").GetComponentInChildren<Text>().text = "Start Battle!";
                 _player2Build = true;
                 moveCam.SwitchCameraMode(2);
                 break;
@@ -57,11 +57,11 @@ public class ControlButton : MonoBehaviour
                 {
                     block.GetComponent<DragDrop>().enabled = false;
                 }
-                                
+
                 // enable slingshot reload for player 1
                 // only player 1 is enabled because player 1 goes first
                 GameObject.FindWithTag("SlingshotP1").SendMessage("EnableSlingshotReloading");
-                
+
                 // enable enemies for player 2
                 // **should be moved till after 2nd player build phase**
                 enemiesP2 = GameObject.FindGameObjectsWithTag("EnemyP2");
@@ -76,7 +76,7 @@ public class ControlButton : MonoBehaviour
                     block.GetComponent<DragDrop>().enabled = false;
                 }
 
-                moveCam.SwitchCameraMode(0);  
+                moveCam.SwitchCameraMode(0);
                 break;
         }
     }
