@@ -18,15 +18,9 @@ public class Battle : MonoBehaviour
         GameObject.FindWithTag("DisplayPl2").GetComponent<Text>().text = pl2;
 
     }
-    // Update is called once per frame
-    private void Update()
-    {
-
-    }
 
     public void ButtonInteract()
     {
-       // Debug.Log("Our button was clicked");
         buildingBlocks = FindObjectsOfType(typeof(Rigidbody2D)) as Rigidbody2D[];
         foreach (Rigidbody2D buildingBlock in buildingBlocks)
         {
