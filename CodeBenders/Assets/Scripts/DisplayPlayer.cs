@@ -36,9 +36,9 @@ public class DisplayPlayer : MonoBehaviour
 
     }
 
-    public void changePlayer(GameObject projectile)
+    public void ChangePlayer(GameObject projectile)
     {
-        GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text = (projectile.tag == "ProjectileP1") ? player2 : player1;
+        GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text = (projectile.CompareTag("ProjectileP1")) ? player2 : player1;
         FadeInAndOut();
     }
 

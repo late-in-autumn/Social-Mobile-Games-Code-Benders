@@ -28,7 +28,7 @@ public class DragDrop : MonoBehaviour
             }
             // Constrains Player 1's objects to the grid
             // Takes into account grid's offset in coordinate system
-            if(gameObject.tag == "BuildingBlock" || gameObject.tag == "Enemy")
+            if(gameObject.CompareTag("BuildingBlock") || gameObject.CompareTag("Enemy"))
             {
               if ((transform.position.x - tileWidth/2)<-17.09f)
                 transform.position = new Vector2(-17.09f+tileWidth/2, Mathf.RoundToInt(transform.position.y));
@@ -74,7 +74,7 @@ public class DragDrop : MonoBehaviour
         {
             // Snapping Player 1's objects to grid
             // takes into account the grid's offset from the coordinate system
-            if(gameObject.tag == "BuildingBlock" || gameObject.tag == "Enemy")
+            if(gameObject.CompareTag("BuildingBlock") || gameObject.CompareTag("Enemy"))
             {
               if (transform.position.x - (int) transform.position.x < 0.45)
                 if (transform.position.y - (int) transform.position.y < 0.15 || transform.position.y - (int) transform.position.y > 0.65)
