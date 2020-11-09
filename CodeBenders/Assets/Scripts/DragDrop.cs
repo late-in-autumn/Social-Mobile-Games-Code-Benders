@@ -91,6 +91,23 @@ public class DragDrop : MonoBehaviour
                   transform.position = new Vector2(Mathf.Ceil(transform.position.x) + 0.335f, Mathf.RoundToInt(transform.position.y) + 0.1f);
                 else
                   transform.position = new Vector2(Mathf.Ceil(transform.position.x) + 0.335f, Mathf.Floor(transform.position.y) + 0.1f);
+
+
+                  if(gameObject.tag.Contains("BuildingBlock")) {
+                    if(!gameObject.GetComponent<Block>().insideGrid) {
+                      gameObject.GetComponent<Block>().insideGrid = true;
+                      GameObject.FindWithTag("Battle").SendMessage("Change", 1);
+                    
+                    }
+                  }
+                  else {
+                    if(!gameObject.GetComponent<Target>().inside_grid) {
+                      gameObject.GetComponent<Target>().inside_grid = true;
+                      GameObject.FindWithTag("Battle").SendMessage("Change", 1);
+                    
+                    }
+                  }
+                  
             }
             // Snapping Player 2's objects to grid
             else
@@ -105,6 +122,21 @@ public class DragDrop : MonoBehaviour
                   transform.position = new Vector2(Mathf.Floor(transform.position.x) + 0.9f, Mathf.RoundToInt(transform.position.y) + 0.1f);
                 else
                   transform.position = new Vector2(Mathf.Floor(transform.position.x) + 0.9f, Mathf.Floor(transform.position.y) + 0.1f);
+
+                  if(gameObject.tag.Contains("BuildingBlock")) {
+                    if(!gameObject.GetComponent<Block>().insideGrid) {
+                      gameObject.GetComponent<Block>().insideGrid = true;
+                      GameObject.FindWithTag("Battle").SendMessage("Change", 2);
+                    
+                    }
+                  }
+                  else {
+                    if(!gameObject.GetComponent<Target>().inside_grid) {
+                      gameObject.GetComponent<Target>().inside_grid = true;
+                      GameObject.FindWithTag("Battle").SendMessage("Change", 2);
+                    
+                    }
+                  }
             }
         }
         isDragged = false;

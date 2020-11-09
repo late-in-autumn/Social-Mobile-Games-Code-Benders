@@ -38,7 +38,7 @@ public class Projectile : MonoBehaviour
         _projectileSpringJoint.enabled = false;
 
         // update the telemetry counter
-        GameObject.Find("Telemetry").SendMessage(
+        GameObject.FindWithTag("Telemetry").SendMessage(
             gameObject.tag.Equals("ProjectileP1") ? "PlayerOneFired" : "PlayerTwoFired");
     }
 
@@ -49,12 +49,15 @@ public class Projectile : MonoBehaviour
         if (slingshot != null)
             slingshot.gameObject.GetComponent<ProjectileGenerator>().newProjectileNeeded = true;
 
-        // change player name on display
-        GameObject.FindWithTag("PlayerTurn")?.SendMessage("ChangePlayer", gameObject);
-
-        // enable the slingshot for the other side
-        GameObject.Find("PlayerTurn")?.SendMessage("EnableSlingshotForPlayer",
-            gameObject.CompareTag("ProjectileP1") ? PlayersEnum.PlayerTwo : PlayersEnum.PlayerOne);
+        if (GameObject.FindWithTag("PlayerTurn"))
+        {
+            // change player name on display
+            GameObject.FindWithTag("PlayerTurn").SendMessage("ChangePlayer", gameObject);
+        
+            // enable the slingshot for the other side
+            GameObject.FindWithTag("PlayerTurn").SendMessage("EnableSlingshotForPlayer",
+                gameObject.CompareTag("ProjectileP1") ? PlayersEnum.PlayerTwo : PlayersEnum.PlayerOne);
+        }
 
        Destroy(gameObject);
     }

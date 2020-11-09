@@ -932,6 +932,7 @@ GameObject:
   - component: {fileID: 143510625}
   - component: {fileID: 143510623}
   - component: {fileID: 143510624}
+  - component: {fileID: 143510628}
   m_Layer: 0
   m_Name: target3 II
   m_TagString: EnemyP2
@@ -978,6 +979,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  woodenBlockTag: 
+  currentFireLevel: 0
+  lowFire: {fileID: 21300000, guid: 77d73604eb4614b18b45108434f50736, type: 3}
+  mediumFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  highFire: {fileID: 21300000, guid: a361af30297c0406da401a5698aebd95, type: 3}
 --- !u!114 &143510625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1053,12 +1059,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 143510622}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.7, y: -2.34, z: 0}
+  m_LocalPosition: {x: 9.5, y: 5.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &143510628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143510622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5013dfa20574cfcb6a88aaa463dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
 --- !u!1 &147917208
 GameObject:
   m_ObjectHideFlags: 0
@@ -1267,6 +1286,7 @@ GameObject:
   - component: {fileID: 163466843}
   - component: {fileID: 163466842}
   - component: {fileID: 163466841}
+  - component: {fileID: 163466846}
   m_Layer: 0
   m_Name: Horizontal II 3 X 1 (2)
   m_TagString: BuildingBlockP2
@@ -1396,13 +1416,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163466840}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.136, y: 2.78, z: 0}
+  m_LocalPosition: {x: 23.04, y: 2.11, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 0}
   m_Children:
   - {fileID: 1573430262}
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &163466846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163466840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: 
+  insideGrid: 0
+  targetTag: 
 --- !u!1 &172100835
 GameObject:
   m_ObjectHideFlags: 0
@@ -1726,9 +1761,10 @@ GameObject:
   - component: {fileID: 243682767}
   - component: {fileID: 243682766}
   - component: {fileID: 243682765}
+  - component: {fileID: 243682770}
   m_Layer: 0
   m_Name: Vertical-2 1 X 1 (2)
-  m_TagString: BuildingBlockP2
+  m_TagString: WoodenP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1855,12 +1891,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 243682764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.92, y: 3.1469994, z: 0}
+  m_LocalPosition: {x: 8.8, y: -0.76, z: 0}
   m_LocalScale: {x: 1, y: 1.0153456, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &243682770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243682764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP2
+  insideGrid: 0
+  targetTag: EnemyP2
 --- !u!1 &248104862
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,9 +2077,10 @@ GameObject:
   - component: {fileID: 268428296}
   - component: {fileID: 268428295}
   - component: {fileID: 268428294}
+  - component: {fileID: 268428299}
   m_Layer: 0
   m_Name: Vertical-3 II
-  m_TagString: BuildingBlockP2
+  m_TagString: WoodenP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2155,13 +2207,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 268428293}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15.29, y: -1.72, z: 0}
+  m_LocalPosition: {x: 21.5, y: -1.85, z: 0}
   m_LocalScale: {x: 1, y: 3, z: 0}
   m_Children:
   - {fileID: 631618616}
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &268428299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268428293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP2
+  insideGrid: 0
+  targetTag: EnemyP2
 --- !u!1 &271274266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,6 +2564,7 @@ GameObject:
   - component: {fileID: 325780600}
   - component: {fileID: 325780599}
   - component: {fileID: 325780598}
+  - component: {fileID: 325780603}
   m_Layer: 0
   m_Name: Vertical-2 1 X 1 (3)
   m_TagString: BuildingBlockP2
@@ -2626,12 +2694,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 325780597}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.83, y: 3.0570002, z: 0}
+  m_LocalPosition: {x: 8.82, y: -2.78, z: 0}
   m_LocalScale: {x: 1, y: 1.0153456, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &325780603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325780597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: 
+  insideGrid: 0
+  targetTag: 
 --- !u!1 &336500580
 GameObject:
   m_ObjectHideFlags: 0
@@ -2988,6 +3071,7 @@ GameObject:
   - component: {fileID: 381550784}
   - component: {fileID: 381550783}
   - component: {fileID: 381550782}
+  - component: {fileID: 381550787}
   m_Layer: 0
   m_Name: Vertical-5 X 1 (1)
   m_TagString: BuildingBlock
@@ -3117,12 +3201,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381550781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.56, y: -0.85300016, z: 0}
+  m_LocalPosition: {x: -18.45, y: -0.82, z: 0}
   m_LocalScale: {x: 1.0011662, y: 5.0029387, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &381550787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381550781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: 
+  insideGrid: 0
+  targetTag: 
 --- !u!1 &382746255
 GameObject:
   m_ObjectHideFlags: 0
@@ -3168,6 +3267,7 @@ GameObject:
   - component: {fileID: 382777125}
   - component: {fileID: 382777124}
   - component: {fileID: 382777123}
+  - component: {fileID: 382777128}
   m_Layer: 0
   m_Name: Vertical-2 5 X 1 (1)
   m_TagString: BuildingBlockP2
@@ -3297,12 +3397,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 382777122}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.94, y: -0.8390002, z: 0}
+  m_LocalPosition: {x: 10.2, y: -0.8390002, z: 0}
   m_LocalScale: {x: 1, y: 5.0719423, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &382777128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382777122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: 
+  insideGrid: 0
+  targetTag: 
 --- !u!1 &390161422
 GameObject:
   m_ObjectHideFlags: 0
@@ -4207,7 +4322,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 467129617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.68, y: -1.5699999, z: 0}
+  m_LocalPosition: {x: -4.5, y: -1.85, z: 0}
   m_LocalScale: {x: 1, y: 3, z: 0}
   m_Children:
   - {fileID: 496318064}
@@ -4689,6 +4804,7 @@ GameObject:
   - component: {fileID: 533594180}
   - component: {fileID: 533594181}
   - component: {fileID: 533594182}
+  - component: {fileID: 533594183}
   m_Layer: 0
   m_Name: target1
   m_TagString: Enemy
@@ -4754,7 +4870,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533594177}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.82, y: 0.73, z: 0}
+  m_LocalPosition: {x: -16, y: 5.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4816,6 +4932,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  woodenBlockTag: 
+  currentFireLevel: 0
+  lowFire: {fileID: 21300000, guid: 77d73604eb4614b18b45108434f50736, type: 3}
+  mediumFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  highFire: {fileID: 21300000, guid: a361af30297c0406da401a5698aebd95, type: 3}
+--- !u!114 &533594183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533594177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5013dfa20574cfcb6a88aaa463dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
 --- !u!1 &551770762
 GameObject:
   m_ObjectHideFlags: 0
@@ -5411,6 +5545,7 @@ GameObject:
   - component: {fileID: 639479585}
   - component: {fileID: 639479583}
   - component: {fileID: 639479584}
+  - component: {fileID: 639479588}
   m_Layer: 0
   m_Name: target2 II
   m_TagString: EnemyP2
@@ -5457,6 +5592,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  woodenBlockTag: 
+  currentFireLevel: 0
+  lowFire: {fileID: 21300000, guid: 77d73604eb4614b18b45108434f50736, type: 3}
+  mediumFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  highFire: {fileID: 21300000, guid: a361af30297c0406da401a5698aebd95, type: 3}
 --- !u!114 &639479585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5532,12 +5672,25 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 639479582}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.58, y: -0.98, z: 0}
+  m_LocalPosition: {x: 10.75, y: 5.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &639479588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639479582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5013dfa20574cfcb6a88aaa463dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
 --- !u!1 &647161525
 GameObject:
   m_ObjectHideFlags: 0
@@ -5583,6 +5736,7 @@ GameObject:
   - component: {fileID: 647588767}
   - component: {fileID: 647588765}
   - component: {fileID: 647588766}
+  - component: {fileID: 647588768}
   m_Layer: 0
   m_Name: target2
   m_TagString: Enemy
@@ -5648,7 +5802,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647588762}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.900001, y: -0.6799998, z: 0}
+  m_LocalPosition: {x: -17.25, y: 5.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5684,6 +5838,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  woodenBlockTag: 
+  currentFireLevel: 0
+  lowFire: {fileID: 21300000, guid: 77d73604eb4614b18b45108434f50736, type: 3}
+  mediumFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  highFire: {fileID: 21300000, guid: a361af30297c0406da401a5698aebd95, type: 3}
 --- !u!61 &647588767
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5710,6 +5869,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.61, y: 0.61}
   m_EdgeRadius: 0
+--- !u!114 &647588768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647588762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5013dfa20574cfcb6a88aaa463dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
 --- !u!1 &652839231
 GameObject:
   m_ObjectHideFlags: 0
@@ -5887,9 +6059,10 @@ GameObject:
   - component: {fileID: 690668732}
   - component: {fileID: 690668731}
   - component: {fileID: 690668730}
+  - component: {fileID: 690668735}
   m_Layer: 0
   m_Name: Vertical-1 X 1 (1)
-  m_TagString: BuildingBlock
+  m_TagString: WoodenP1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6016,12 +6189,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 690668729}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.67, y: 2.07, z: 0}
+  m_LocalPosition: {x: -19.78, y: 1.1, z: 0}
   m_LocalScale: {x: 0.9997787, y: 0.98650354, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690668735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690668729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  targetTag: Enemy
 --- !u!1 &692801084
 GameObject:
   m_ObjectHideFlags: 0
@@ -7244,6 +7432,7 @@ GameObject:
   - component: {fileID: 865339644}
   - component: {fileID: 865339643}
   - component: {fileID: 865339647}
+  - component: {fileID: 865339648}
   m_Layer: 0
   m_Name: Vertical-2
   m_TagString: BuildingBlock
@@ -7352,7 +7541,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 865339642}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.94, y: -1.52, z: 0}
+  m_LocalPosition: {x: -5.75, y: -1.85, z: 0}
   m_LocalScale: {x: 1, y: 3, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7379,6 +7568,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &865339648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865339642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: 
+  insideGrid: 0
+  targetTag: 
 --- !u!1 &871527183
 GameObject:
   m_ObjectHideFlags: 0
@@ -7896,9 +8100,10 @@ GameObject:
   - component: {fileID: 918326023}
   - component: {fileID: 918326022}
   - component: {fileID: 918326026}
+  - component: {fileID: 918326027}
   m_Layer: 0
   m_Name: Vertical
-  m_TagString: BuildingBlock
+  m_TagString: WoodenP1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8004,7 +8209,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918326021}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.07, y: -1.54, z: 0}
+  m_LocalPosition: {x: -7, y: -1.85, z: 0}
   m_LocalScale: {x: 1, y: 3, z: 0}
   m_Children:
   - {fileID: 289327736}
@@ -8032,6 +8237,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &918326027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918326021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  targetTag: Enemy
 --- !u!1 &924251476
 GameObject:
   m_ObjectHideFlags: 0
@@ -10323,6 +10543,7 @@ GameObject:
   - component: {fileID: 1174198897}
   - component: {fileID: 1174198896}
   - component: {fileID: 1174198899}
+  - component: {fileID: 1174198900}
   m_Layer: 5
   m_Name: Battle
   m_TagString: Battle
@@ -10454,6 +10675,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prompt: {fileID: 271274266}
+--- !u!114 &1174198900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174198894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21783007bea1443a7bf7f06f9e2f1157, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  but: {fileID: 0}
 --- !u!1 &1180033614
 GameObject:
   m_ObjectHideFlags: 0
@@ -10741,9 +10975,10 @@ GameObject:
   - component: {fileID: 1194812452}
   - component: {fileID: 1194812451}
   - component: {fileID: 1194812450}
+  - component: {fileID: 1194812455}
   m_Layer: 0
   m_Name: Vertical-1 X 1 (2)
-  m_TagString: BuildingBlock
+  m_TagString: WoodenP1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10870,12 +11105,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194812449}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.62, y: 2.0969996, z: 0}
+  m_LocalPosition: {x: -19.8, y: -0.92, z: 0}
   m_LocalScale: {x: 0.9997787, y: 0.98650354, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1194812455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194812449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  targetTag: Enemy
 --- !u!1 &1204550746
 GameObject:
   m_ObjectHideFlags: 0
@@ -11465,7 +11715,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1515269863}
-        m_MethodName: display
+        m_MethodName: Display
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11801,6 +12051,7 @@ GameObject:
   - component: {fileID: 1275741498}
   - component: {fileID: 1275741497}
   - component: {fileID: 1275741496}
+  - component: {fileID: 1275741501}
   m_Layer: 0
   m_Name: Horizontal (1)
   m_TagString: BuildingBlock
@@ -11930,13 +12181,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1275741495}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.63, y: 4.087, z: 0}
+  m_LocalPosition: {x: -5.78, y: 1.76, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 0}
   m_Children:
   - {fileID: 348034460}
   m_Father: {fileID: 0}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1275741501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275741495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: 
+  insideGrid: 0
+  targetTag: 
 --- !u!1 &1287731231
 GameObject:
   m_ObjectHideFlags: 0
@@ -11982,9 +12248,10 @@ GameObject:
   - component: {fileID: 1290329938}
   - component: {fileID: 1290329937}
   - component: {fileID: 1290329936}
+  - component: {fileID: 1290329941}
   m_Layer: 0
   m_Name: Vertical-2 1 X 1 (1)
-  m_TagString: BuildingBlockP2
+  m_TagString: WoodenP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12111,12 +12378,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290329935}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.9, y: 1.1869998, z: 0}
+  m_LocalPosition: {x: 8.83, y: 1.1869998, z: 0}
   m_LocalScale: {x: 1, y: 1.0153456, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1290329941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290329935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP2
+  insideGrid: 0
+  targetTag: EnemyP2
 --- !u!1 &1294015106
 GameObject:
   m_ObjectHideFlags: 0
@@ -13983,7 +14265,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7cc6362bf284f7b90f0c4217216fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  show: {fileID: 0}
   player1: 
   player2: 
 --- !u!114 &1515269864
@@ -14294,7 +14575,7 @@ GameObject:
   - component: {fileID: 1556383463}
   m_Layer: 0
   m_Name: Tilemap (1)
-  m_TagString: Untagged
+  m_TagString: TileMap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15263,6 +15544,7 @@ GameObject:
   - component: {fileID: 1577514737}
   - component: {fileID: 1577514736}
   - component: {fileID: 1577514735}
+  - component: {fileID: 1577514740}
   m_Layer: 0
   m_Name: Vertical-1 II
   m_TagString: BuildingBlockP2
@@ -15392,13 +15674,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1577514734}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 18.78, y: -1.62, z: 0}
+  m_LocalPosition: {x: 24.5, y: -1.85, z: 0}
   m_LocalScale: {x: 1, y: 3, z: 0}
   m_Children:
   - {fileID: 162059334}
   m_Father: {fileID: 0}
   m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577514740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577514734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: 
+  insideGrid: 0
+  targetTag: 
 --- !u!1 &1580602684
 GameObject:
   m_ObjectHideFlags: 0
@@ -16272,9 +16569,10 @@ GameObject:
   - component: {fileID: 1676206526}
   - component: {fileID: 1676206525}
   - component: {fileID: 1676206524}
+  - component: {fileID: 1676206529}
   m_Layer: 0
   m_Name: Horizontal II
-  m_TagString: BuildingBlockP2
+  m_TagString: WoodenP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16401,13 +16699,28 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1676206523}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 16.1, y: 1.6100001, z: 0}
+  m_LocalPosition: {x: 23.04, y: 0.6, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 0}
   m_Children:
   - {fileID: 1263234793}
   m_Father: {fileID: 0}
   m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1676206529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676206523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP2
+  insideGrid: 0
+  targetTag: EnemyP2
 --- !u!1 &1681119086
 GameObject:
   m_ObjectHideFlags: 0
@@ -16699,6 +17012,7 @@ GameObject:
   - component: {fileID: 1724955801}
   - component: {fileID: 1724955800}
   - component: {fileID: 1724955799}
+  - component: {fileID: 1724955804}
   m_Layer: 0
   m_Name: Vertical-1 X 1 (3)
   m_TagString: BuildingBlock
@@ -16828,12 +17142,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724955798}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.649, y: 2.0749998, z: 0}
+  m_LocalPosition: {x: -19.79, y: -2.75, z: 0}
   m_LocalScale: {x: 1.0024128, y: 0.9680523, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1724955804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724955798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: 
+  insideGrid: 0
+  targetTag: 
 --- !u!1 &1735934393
 GameObject:
   m_ObjectHideFlags: 0
@@ -18241,6 +18570,7 @@ GameObject:
   - component: {fileID: 1898303126}
   - component: {fileID: 1898303125}
   - component: {fileID: 1898303124}
+  - component: {fileID: 1898303129}
   m_Layer: 0
   m_Name: Vertical-2 II
   m_TagString: BuildingBlockP2
@@ -18370,12 +18700,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1898303123}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.11, y: -1.6799998, z: 0}
+  m_LocalPosition: {x: 23, y: -1.85, z: 0}
   m_LocalScale: {x: 1, y: 3, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1898303129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898303123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: 
+  insideGrid: 0
+  targetTag: 
 --- !u!1 &1899070949
 GameObject:
   m_ObjectHideFlags: 0
@@ -18421,9 +18766,10 @@ GameObject:
   - component: {fileID: 1901683809}
   - component: {fileID: 1901683808}
   - component: {fileID: 1901683812}
+  - component: {fileID: 1901683813}
   m_Layer: 0
   m_Name: Horizontal
-  m_TagString: BuildingBlock
+  m_TagString: WoodenP1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18529,7 +18875,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1901683807}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.99, y: 1, z: 0}
+  m_LocalPosition: {x: -5.78, y: 0.47, z: 0}
   m_LocalScale: {x: 3, y: 1, z: 0}
   m_Children:
   - {fileID: 465734163}
@@ -18557,6 +18903,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1901683813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901683807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  targetTag: Enemy
 --- !u!1 &1913206306
 GameObject:
   m_ObjectHideFlags: 0
@@ -18570,7 +18931,7 @@ GameObject:
   - component: {fileID: 1913206308}
   m_Layer: 0
   m_Name: Tilemap (2)
-  m_TagString: Untagged
+  m_TagString: TileMap
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19613,6 +19974,7 @@ GameObject:
   - component: {fileID: 1944668392}
   - component: {fileID: 1944668390}
   - component: {fileID: 1944668391}
+  - component: {fileID: 1944668393}
   m_Layer: 0
   m_Name: target3
   m_TagString: Enemy
@@ -19678,7 +20040,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1944668387}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -14.72, y: -2.02, z: 0}
+  m_LocalPosition: {x: -18.5, y: 5.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19714,6 +20076,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  woodenBlockTag: 
+  currentFireLevel: 0
+  lowFire: {fileID: 21300000, guid: 77d73604eb4614b18b45108434f50736, type: 3}
+  mediumFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  highFire: {fileID: 21300000, guid: a361af30297c0406da401a5698aebd95, type: 3}
 --- !u!61 &1944668392
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19740,6 +20107,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.61, y: 0.61}
   m_EdgeRadius: 0
+--- !u!114 &1944668393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944668387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5013dfa20574cfcb6a88aaa463dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
 --- !u!1 &1959675527
 GameObject:
   m_ObjectHideFlags: 0
@@ -21377,6 +21757,7 @@ GameObject:
   - component: {fileID: 2136929563}
   - component: {fileID: 2136929562}
   - component: {fileID: 2136929561}
+  - component: {fileID: 2136929566}
   m_Layer: 0
   m_Name: target1 II
   m_TagString: EnemyP2
@@ -21397,6 +21778,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
+  woodenBlockTag: 
+  currentFireLevel: 0
+  lowFire: {fileID: 21300000, guid: 77d73604eb4614b18b45108434f50736, type: 3}
+  mediumFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  highFire: {fileID: 21300000, guid: a361af30297c0406da401a5698aebd95, type: 3}
 --- !u!114 &2136929562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21498,9 +21884,22 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2136929560}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.62, y: 0.5, z: 0}
+  m_LocalPosition: {x: 12, y: 5.5, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2136929566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136929560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be5013dfa20574cfcb6a88aaa463dda2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
