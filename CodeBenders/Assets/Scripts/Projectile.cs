@@ -7,7 +7,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     // class-specific constant: how far is the player allowed to drag the projectile
-    private const float MaxDragDistance = 2f;
+    private const float MaxDragDistance = 2.2f;
     // class-specific constant: the delay after release to disable SpringJoint2D component
     private const float SpringJointReleaseDelay = 0.15f;
 
@@ -48,10 +48,10 @@ public class Projectile : MonoBehaviour
         // signal that the current slingshot needs a new projectile
         if (slingshot != null)
             slingshot.gameObject.GetComponent<ProjectileGenerator>().newProjectileNeeded = true;
-        
+
         // change player name on display
         GameObject.FindWithTag("PlayerTurn")?.SendMessage("ChangePlayer", gameObject);
-        
+
         // enable the slingshot for the other side
         GameObject.Find("PlayerTurn")?.SendMessage("EnableSlingshotForPlayer",
             gameObject.CompareTag("ProjectileP1") ? PlayersEnum.PlayerTwo : PlayersEnum.PlayerOne);
