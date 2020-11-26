@@ -533,6 +533,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   source: {fileID: 0}
+  woodenBlockTag: WoodenP2
+  currentFireLevel: 0
+  lowFire: {fileID: 0}
+  mediumFire: {fileID: 0}
+  highFire: {fileID: 0}
+  battleMode: 0
 --- !u!114 &143510625
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -617,6 +623,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &143510628
 AudioSource:
+--- !u!114 &143510628
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -711,6 +719,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
 --- !u!1 &143539891
 GameObject:
   m_ObjectHideFlags: 0
@@ -884,6 +897,7 @@ GameObject:
   - component: {fileID: 163466845}
   - component: {fileID: 163466844}
   - component: {fileID: 163466843}
+  - component: {fileID: 163466846}
   - component: {fileID: 163466842}
   - component: {fileID: 163466841}
   m_Layer: 0
@@ -1021,6 +1035,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &163466846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 163466840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &169257191
 GameObject:
   m_ObjectHideFlags: 0
@@ -1194,6 +1224,7 @@ GameObject:
   - component: {fileID: 243682769}
   - component: {fileID: 243682768}
   - component: {fileID: 243682767}
+  - component: {fileID: 243682770}
   - component: {fileID: 243682766}
   - component: {fileID: 243682765}
   m_Layer: 0
@@ -1331,6 +1362,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &243682770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243682764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &268428293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,6 +1389,7 @@ GameObject:
   - component: {fileID: 268428298}
   - component: {fileID: 268428297}
   - component: {fileID: 268428296}
+  - component: {fileID: 268428299}
   - component: {fileID: 268428295}
   - component: {fileID: 268428294}
   m_Layer: 0
@@ -1479,6 +1527,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &268428299
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 268428293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &271274266
 GameObject:
   m_ObjectHideFlags: 0
@@ -1730,6 +1794,7 @@ GameObject:
   - component: {fileID: 325780602}
   - component: {fileID: 325780601}
   - component: {fileID: 325780600}
+  - component: {fileID: 325780603}
   - component: {fileID: 325780599}
   - component: {fileID: 325780598}
   m_Layer: 0
@@ -1867,6 +1932,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &325780603
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 325780597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &343338522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2245,6 +2326,7 @@ GameObject:
   - component: {fileID: 381550786}
   - component: {fileID: 381550785}
   - component: {fileID: 381550784}
+  - component: {fileID: 381550787}
   - component: {fileID: 381550783}
   - component: {fileID: 381550782}
   m_Layer: 0
@@ -2382,6 +2464,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &381550787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381550781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &382777122
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,6 +2491,7 @@ GameObject:
   - component: {fileID: 382777127}
   - component: {fileID: 382777126}
   - component: {fileID: 382777125}
+  - component: {fileID: 382777128}
   - component: {fileID: 382777124}
   - component: {fileID: 382777123}
   m_Layer: 0
@@ -2530,6 +2629,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &382777128
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 382777122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1001 &397868129
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2720,6 +2835,7 @@ GameObject:
   - component: {fileID: 467129621}
   - component: {fileID: 467129620}
   - component: {fileID: 467129619}
+  - component: {fileID: 467129623}
   - component: {fileID: 467129618}
   - component: {fileID: 467129622}
   m_Layer: 0
@@ -2857,6 +2973,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &467129623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467129617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1001 &506494345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3251,6 +3383,14 @@ MonoBehaviour:
   source: {fileID: 0}
 --- !u!82 &533594183
 AudioSource:
+  woodenBlockTag: WoodenP1
+  currentFireLevel: 0
+  lowFire: {fileID: 0}
+  mediumFire: {fileID: 0}
+  highFire: {fileID: 0}
+  battleMode: 0
+--- !u!114 &533594183
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3345,6 +3485,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
 --- !u!1 &553603724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3552,6 +3697,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   source: {fileID: 0}
+  woodenBlockTag: WoodenP2
+  currentFireLevel: 0
+  lowFire: {fileID: 0}
+  mediumFire: {fileID: 0}
+  highFire: {fileID: 0}
+  battleMode: 0
 --- !u!114 &639479585
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3636,6 +3787,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &639479588
 AudioSource:
+--- !u!114 &639479588
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3730,6 +3883,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
 --- !u!1 &647588762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3846,7 +4004,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 2
-  source: {fileID: 0}
+  woodenBlockTag: WoodenP1
+  currentFireLevel: 0
+  lowFire: {fileID: 0}
+  mediumFire: {fileID: 0}
+  highFire: {fileID: 0}
+  battleMode: 0
 --- !u!61 &647588767
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3875,6 +4038,8 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!82 &647588768
 AudioSource:
+--- !u!114 &647588768
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3969,6 +4134,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
 --- !u!1 &649320868
 GameObject:
   m_ObjectHideFlags: 0
@@ -4012,6 +4182,7 @@ GameObject:
   - component: {fileID: 690668734}
   - component: {fileID: 690668733}
   - component: {fileID: 690668732}
+  - component: {fileID: 690668735}
   - component: {fileID: 690668731}
   - component: {fileID: 690668730}
   m_Layer: 0
@@ -4149,6 +4320,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &690668735
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 690668729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &701818416
 GameObject:
   m_ObjectHideFlags: 0
@@ -4847,6 +5034,7 @@ GameObject:
   - component: {fileID: 865339646}
   - component: {fileID: 865339645}
   - component: {fileID: 865339644}
+  - component: {fileID: 865339648}
   - component: {fileID: 865339643}
   - component: {fileID: 865339647}
   m_Layer: 0
@@ -4984,6 +5172,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &865339648
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865339642}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &896862627
 GameObject:
   m_ObjectHideFlags: 0
@@ -5109,6 +5313,7 @@ GameObject:
   - component: {fileID: 918326023}
   - component: {fileID: 918326022}
   - component: {fileID: 918326026}
+  - component: {fileID: 918326027}
   m_Layer: 0
   m_Name: Vertical
   m_TagString: BuildingBlock
@@ -5244,6 +5449,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &918326027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 918326021}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &939147213
 GameObject:
   m_ObjectHideFlags: 0
@@ -6193,6 +6414,7 @@ GameObject:
   - component: {fileID: 1174198898}
   - component: {fileID: 1174198897}
   - component: {fileID: 1174198896}
+  - component: {fileID: 1174198900}
   - component: {fileID: 1174198899}
   m_Layer: 5
   m_Name: Battle
@@ -6325,6 +6547,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Prompt: {fileID: 271274266}
+--- !u!114 &1174198900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1174198894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda20e77ef1a34f15b7ac55a1fb875c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  but: {fileID: 0}
 --- !u!1 &1185609401
 GameObject:
   m_ObjectHideFlags: 0
@@ -6461,6 +6696,7 @@ GameObject:
   - component: {fileID: 1194812454}
   - component: {fileID: 1194812453}
   - component: {fileID: 1194812452}
+  - component: {fileID: 1194812455}
   - component: {fileID: 1194812451}
   - component: {fileID: 1194812450}
   m_Layer: 0
@@ -6598,6 +6834,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1194812455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1194812449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &1201528544
 GameObject:
   m_ObjectHideFlags: 0
@@ -6963,7 +7215,7 @@ GameObject:
   - component: {fileID: 1216312954}
   m_Layer: 0
   m_Name: Telemetry
-  m_TagString: Untagged
+  m_TagString: Telemetry
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7265,6 +7517,7 @@ GameObject:
   - component: {fileID: 1275741500}
   - component: {fileID: 1275741499}
   - component: {fileID: 1275741498}
+  - component: {fileID: 1275741501}
   - component: {fileID: 1275741497}
   - component: {fileID: 1275741496}
   m_Layer: 0
@@ -7402,6 +7655,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1275741501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1275741495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &1283031307
 GameObject:
   m_ObjectHideFlags: 0
@@ -7606,6 +7875,7 @@ GameObject:
   - component: {fileID: 1290329940}
   - component: {fileID: 1290329939}
   - component: {fileID: 1290329938}
+  - component: {fileID: 1290329941}
   - component: {fileID: 1290329937}
   - component: {fileID: 1290329936}
   m_Layer: 0
@@ -7743,6 +8013,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1290329941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1290329935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &1314200115
 GameObject:
   m_ObjectHideFlags: 0
@@ -8543,7 +8829,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f7cc6362bf284f7b90f0c4217216fcd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  show: {fileID: 0}
   player1: 
   player2: 
 --- !u!114 &1515269864
@@ -9931,6 +10216,7 @@ GameObject:
   - component: {fileID: 1577514739}
   - component: {fileID: 1577514738}
   - component: {fileID: 1577514737}
+  - component: {fileID: 1577514740}
   - component: {fileID: 1577514736}
   - component: {fileID: 1577514735}
   m_Layer: 0
@@ -10068,6 +10354,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1577514740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577514734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &1579789524
 GameObject:
   m_ObjectHideFlags: 0
@@ -10515,6 +10817,7 @@ GameObject:
   - component: {fileID: 1676206528}
   - component: {fileID: 1676206527}
   - component: {fileID: 1676206526}
+  - component: {fileID: 1676206529}
   - component: {fileID: 1676206525}
   - component: {fileID: 1676206524}
   m_Layer: 0
@@ -10652,6 +10955,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1676206529
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676206523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1001 &1706942540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10714,6 +11033,7 @@ GameObject:
   - component: {fileID: 1724955803}
   - component: {fileID: 1724955802}
   - component: {fileID: 1724955801}
+  - component: {fileID: 1724955804}
   - component: {fileID: 1724955800}
   - component: {fileID: 1724955799}
   m_Layer: 0
@@ -10851,6 +11171,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1724955804
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724955798}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &1727045203
 GameObject:
   m_ObjectHideFlags: 0
@@ -11425,6 +11761,7 @@ GameObject:
   - component: {fileID: 1898303128}
   - component: {fileID: 1898303127}
   - component: {fileID: 1898303126}
+  - component: {fileID: 1898303129}
   - component: {fileID: 1898303125}
   - component: {fileID: 1898303124}
   m_Layer: 0
@@ -11562,6 +11899,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1898303129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1898303123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &1901683807
 GameObject:
   m_ObjectHideFlags: 0
@@ -11573,6 +11926,7 @@ GameObject:
   - component: {fileID: 1901683811}
   - component: {fileID: 1901683810}
   - component: {fileID: 1901683809}
+  - component: {fileID: 1901683813}
   - component: {fileID: 1901683808}
   - component: {fileID: 1901683812}
   m_Layer: 0
@@ -11710,6 +12064,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
+--- !u!114 &1901683813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901683807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodenBlockTag: WoodenP1
+  insideGrid: 0
+  battleMode: 0
+  targetTag: Enemy
 --- !u!1 &1913206306
 GameObject:
   m_ObjectHideFlags: 0
@@ -13023,6 +13393,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   source: {fileID: 0}
+  woodenBlockTag: WoodenP1
+  currentFireLevel: 0
+  lowFire: {fileID: 0}
+  mediumFire: {fileID: 0}
+  highFire: {fileID: 0}
+  battleMode: 0
 --- !u!61 &1944668392
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13051,6 +13427,8 @@ BoxCollider2D:
   m_EdgeRadius: 0
 --- !u!82 &1944668393
 AudioSource:
+--- !u!114 &1944668393
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -13145,6 +13523,11 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
 --- !u!1001 &1959306910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13686,6 +14069,7 @@ GameObject:
   - component: {fileID: 2136929563}
   - component: {fileID: 2136929562}
   - component: {fileID: 2136929561}
+  - component: {fileID: 2136929567}
   - component: {fileID: 2136929566}
   - component: {fileID: 2136929567}
   m_Layer: 0
@@ -13709,6 +14093,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 2
   source: {fileID: 0}
+  woodenBlockTag: WoodenP2
+  currentFireLevel: 0
+  lowFire: {fileID: 0}
+  mediumFire: {fileID: 0}
+  highFire: {fileID: 0}
+  battleMode: 0
 --- !u!114 &2136929562
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13838,6 +14228,8 @@ Animator:
   m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!82 &2136929567
 AudioSource:
+--- !u!114 &2136929567
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -13932,3 +14324,8 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
