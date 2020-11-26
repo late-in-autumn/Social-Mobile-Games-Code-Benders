@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 /// <summary>
 /// Component for the target objects.
@@ -41,11 +42,19 @@ public class Enemy : MonoBehaviour
     /// </summary>
     public Sprite highFire;
 
+    /// <summary>
+    /// Whether we are in battle mode or not
+    /// </summary>
+    public bool battleMode;
+    
     // called once upon collision
     private void OnCollisionEnter2D(Collision2D colInfo)
     {
-        source.Play();
+        // do nothing if not in battle mode
+        if (!battleMode) return;
 
+        source.Play();
+        
         // optionally increase the health if gets hit by a wooden block
         if (!String.IsNullOrWhiteSpace(woodenBlockTag))
         {

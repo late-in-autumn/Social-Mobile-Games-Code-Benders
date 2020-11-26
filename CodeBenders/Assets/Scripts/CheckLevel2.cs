@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
- using UnityEngine;
+﻿using UnityEngine;
 
  using UnityEngine.UI;
 
@@ -32,7 +30,6 @@ public class CheckLevel2 : MonoBehaviour
         for(int i =0;i<stoneBuildingBlocks.Length;i++)
         {
         	if(stoneBuildingBlocks[i].GetComponent<Block>().insideGrid == true)
-            
             {
                 count +=1;
             }
