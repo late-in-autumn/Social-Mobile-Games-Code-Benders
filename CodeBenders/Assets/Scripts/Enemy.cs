@@ -56,10 +56,8 @@ public class Enemy : MonoBehaviour
         source.Play();
         
         // optionally increase the health if gets hit by a wooden block
-        if (!String.IsNullOrWhiteSpace(woodenBlockTag))
+        if (!String.IsNullOrWhiteSpace(woodenBlockTag) && colInfo.gameObject.CompareTag(woodenBlockTag))
         {
-            if (!colInfo.gameObject.CompareTag(woodenBlockTag)) return;
-            
             switch (currentFireLevel)
             {
                 case 1: // promote low fire to medium fire
