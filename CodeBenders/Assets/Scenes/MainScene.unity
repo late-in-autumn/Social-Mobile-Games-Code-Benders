@@ -486,6 +486,7 @@ GameObject:
   - component: {fileID: 143510623}
   - component: {fileID: 143510624}
   - component: {fileID: 143510628}
+  - component: {fileID: 143510629}
   m_Layer: 0
   m_Name: target3 II
   m_TagString: EnemyP2
@@ -531,8 +532,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8f031c2b6ab4da2ab28a066eab9edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
   source: {fileID: 0}
+  health: 2
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
   lowFire: {fileID: 0}
@@ -621,10 +622,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &143510628
-AudioSource:
 --- !u!114 &143510628
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 143510622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
+--- !u!82 &143510629
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -634,10 +646,10 @@ MonoBehaviour:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0655abf3d2a7c4a8db741668a3d95137, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -679,7 +691,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.371
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -719,11 +731,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inside_grid: 0
 --- !u!1 &143539891
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,6 +3305,7 @@ GameObject:
   - component: {fileID: 533594182}
   - component: {fileID: 533594183}
   - component: {fileID: 533594184}
+  - component: {fileID: 533594185}
   m_Layer: 0
   m_Name: target1
   m_TagString: Enemy
@@ -3425,11 +3433,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8f031c2b6ab4da2ab28a066eab9edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
   source: {fileID: 0}
---- !u!82 &533594183
-AudioSource:
-  woodenBlockTag: WoodenP1
+  health: 2
+  woodenBlockTag: 
   currentFireLevel: 0
   lowFire: {fileID: 0}
   mediumFire: {fileID: 0}
@@ -3443,10 +3449,36 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 533594177}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
+--- !u!114 &533594184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533594177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda20e77ef1a34f15b7ac55a1fb875c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  but: {fileID: 0}
+--- !u!82 &533594185
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 533594177}
+  m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0655abf3d2a7c4a8db741668a3d95137, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3491,7 +3523,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.311
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3531,24 +3563,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inside_grid: 0
---- !u!114 &533594184
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 533594177}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda20e77ef1a34f15b7ac55a1fb875c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  but: {fileID: 0}
 --- !u!1 &553603724
 GameObject:
   m_ObjectHideFlags: 0
@@ -3709,6 +3723,7 @@ GameObject:
   - component: {fileID: 639479583}
   - component: {fileID: 639479584}
   - component: {fileID: 639479588}
+  - component: {fileID: 639479589}
   m_Layer: 0
   m_Name: target2 II
   m_TagString: EnemyP2
@@ -3754,8 +3769,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8f031c2b6ab4da2ab28a066eab9edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
   source: {fileID: 0}
+  health: 2
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
   lowFire: {fileID: 0}
@@ -3844,10 +3859,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!82 &639479588
-AudioSource:
 --- !u!114 &639479588
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 639479582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
+--- !u!82 &639479589
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -3857,7 +3883,7 @@ MonoBehaviour:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0655abf3d2a7c4a8db741668a3d95137, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -3902,7 +3928,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.371
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -3942,11 +3968,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inside_grid: 0
 --- !u!1 &647588762
 GameObject:
   m_ObjectHideFlags: 0
@@ -3962,6 +3983,7 @@ GameObject:
   - component: {fileID: 647588766}
   - component: {fileID: 647588768}
   - component: {fileID: 647588769}
+  - component: {fileID: 647588770}
   m_Layer: 0
   m_Name: target2
   m_TagString: Enemy
@@ -4063,6 +4085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8f031c2b6ab4da2ab28a066eab9edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: {fileID: 0}
   health: 2
   woodenBlockTag: WoodenP1
   currentFireLevel: 0
@@ -4096,10 +4119,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.61, y: 0.61}
   m_EdgeRadius: 0
---- !u!82 &647588768
-AudioSource:
 --- !u!114 &647588768
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647588762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
+--- !u!114 &647588769
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647588762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda20e77ef1a34f15b7ac55a1fb875c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  but: {fileID: 0}
+--- !u!82 &647588770
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4109,7 +4156,7 @@ MonoBehaviour:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0655abf3d2a7c4a8db741668a3d95137, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -4194,24 +4241,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inside_grid: 0
---- !u!114 &647588769
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 647588762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda20e77ef1a34f15b7ac55a1fb875c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  but: {fileID: 0}
 --- !u!1 &649320868
 GameObject:
   m_ObjectHideFlags: 0
@@ -13496,6 +13525,7 @@ GameObject:
   - component: {fileID: 1944668391}
   - component: {fileID: 1944668393}
   - component: {fileID: 1944668394}
+  - component: {fileID: 1944668395}
   m_Layer: 0
   m_Name: target3
   m_TagString: Enemy
@@ -13597,8 +13627,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8f031c2b6ab4da2ab28a066eab9edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
   source: {fileID: 0}
+  health: 2
   woodenBlockTag: WoodenP1
   currentFireLevel: 0
   lowFire: {fileID: 0}
@@ -13631,10 +13661,34 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.61, y: 0.61}
   m_EdgeRadius: 0
---- !u!82 &1944668393
-AudioSource:
 --- !u!114 &1944668393
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944668387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
+--- !u!114 &1944668394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1944668387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda20e77ef1a34f15b7ac55a1fb875c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  but: {fileID: 0}
+--- !u!82 &1944668395
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -13644,7 +13698,7 @@ MonoBehaviour:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0655abf3d2a7c4a8db741668a3d95137, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -13729,24 +13783,6 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inside_grid: 0
---- !u!114 &1944668394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1944668387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda20e77ef1a34f15b7ac55a1fb875c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  but: {fileID: 0}
 --- !u!1001 &1959306910
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14290,7 +14326,7 @@ GameObject:
   - component: {fileID: 2136929561}
   - component: {fileID: 2136929567}
   - component: {fileID: 2136929566}
-  - component: {fileID: 2136929567}
+  - component: {fileID: 2136929568}
   m_Layer: 0
   m_Name: target1 II
   m_TagString: EnemyP2
@@ -14310,8 +14346,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e8f031c2b6ab4da2ab28a066eab9edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
   source: {fileID: 0}
+  health: 2
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
   lowFire: {fileID: 0}
@@ -14445,10 +14481,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!82 &2136929567
-AudioSource:
 --- !u!114 &2136929567
 MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2136929560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inside_grid: 0
+--- !u!82 &2136929568
+AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -14458,7 +14505,7 @@ MonoBehaviour:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0655abf3d2a7c4a8db741668a3d95137, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 0
@@ -14503,7 +14550,7 @@ MonoBehaviour:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.371
+      value: 0
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -14543,8 +14590,3 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8cc8b30919914144e81364e213c9cc4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inside_grid: 0

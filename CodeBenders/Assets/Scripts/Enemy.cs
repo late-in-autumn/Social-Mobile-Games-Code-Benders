@@ -7,16 +7,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     /// <summary>
+    /// The sound effect that is attached.
+    /// </summary>
+    public AudioSource source;
+    
+    /// <summary>
     /// How much damage can a target withstand.
     /// </summary>
     public float health = 2f;
 
-    public AudioSource source;
-
-
-    void Start() {
-        source = GetComponent<AudioSource>();
-    }
     /// <summary>
     /// Tag for identifying the wooden blocks.
     /// </summary>
@@ -53,6 +52,7 @@ public class Enemy : MonoBehaviour
         // do nothing if not in battle mode
         if (!battleMode) return;
 
+        // play the sound effect
         source.Play();
         
         // optionally increase the health if gets hit by a wooden block
@@ -84,6 +84,9 @@ public class Enemy : MonoBehaviour
     // called before the first frame update
     private void Start()
     {
+        // initialize the sound effect
+        source = GetComponent<AudioSource>();
+        
         if (lowFire == null || String.IsNullOrWhiteSpace(woodenBlockTag)) return;
         // initialize to low fire
         GetComponent<SpriteRenderer>().sprite = lowFire;
