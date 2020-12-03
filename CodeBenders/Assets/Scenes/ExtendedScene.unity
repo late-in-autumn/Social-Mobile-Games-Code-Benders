@@ -536,9 +536,13 @@ MonoBehaviour:
   health: 2
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
-  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
-  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
-  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  lowFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  mediumFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  highFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  lowFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
+  mediumFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810,
+    type: 2}
+  highFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
   battleMode: 0
 --- !u!114 &143510625
 MonoBehaviour:
@@ -3437,9 +3441,13 @@ MonoBehaviour:
   health: 2
   woodenBlockTag: WoodenP1
   currentFireLevel: 0
-  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
-  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
-  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  lowFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  mediumFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  highFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  lowFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
+  mediumFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810,
+    type: 2}
+  highFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
   battleMode: 0
 --- !u!114 &533594183
 MonoBehaviour:
@@ -3773,9 +3781,13 @@ MonoBehaviour:
   health: 2
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
-  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
-  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
-  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  lowFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  mediumFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  highFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  lowFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
+  mediumFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810,
+    type: 2}
+  highFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
   battleMode: 0
 --- !u!114 &639479585
 MonoBehaviour:
@@ -4089,9 +4101,13 @@ MonoBehaviour:
   health: 2
   woodenBlockTag: WoodenP1
   currentFireLevel: 0
-  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
-  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
-  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  lowFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  mediumFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  highFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  lowFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
+  mediumFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810,
+    type: 2}
+  highFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
   battleMode: 0
 --- !u!61 &647588767
 BoxCollider2D:
@@ -13631,9 +13647,13 @@ MonoBehaviour:
   health: 2
   woodenBlockTag: WoodenP1
   currentFireLevel: 0
-  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
-  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
-  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  lowFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  mediumFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  highFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  lowFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
+  mediumFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810,
+    type: 2}
+  highFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
   battleMode: 0
 --- !u!61 &1944668392
 BoxCollider2D:
@@ -14350,9 +14370,13 @@ MonoBehaviour:
   health: 2
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
-  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
-  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
-  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
+  lowFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  mediumFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  highFire: {fileID: 21300000, guid: 3cbc32fa1524a4c2aaaacfb77b682574, type: 3}
+  lowFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
+  mediumFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810,
+    type: 2}
+  highFireController: {fileID: 9100000, guid: f61cc7c4df7cd4bd6bb5519425b69810, type: 2}
   battleMode: 0
 --- !u!114 &2136929562
 MonoBehaviour:
