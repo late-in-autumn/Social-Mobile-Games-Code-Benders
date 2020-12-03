@@ -536,9 +536,9 @@ MonoBehaviour:
   health: 2
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
-  lowFire: {fileID: 0}
-  mediumFire: {fileID: 0}
-  highFire: {fileID: 0}
+  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
+  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
+  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
   battleMode: 0
 --- !u!114 &143510625
 MonoBehaviour:
@@ -909,7 +909,7 @@ GameObject:
   - component: {fileID: 163466841}
   m_Layer: 0
   m_Name: Horizontal II 3 X 1 (2)
-  m_TagString: BuildingBlockP2
+  m_TagString: WoodenP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1054,10 +1054,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodenBlockTag: WoodenP1
+  woodenBlockTag: WoodenP2
   insideGrid: 0
   battleMode: 0
-  targetTag: Enemy
+  targetTag: EnemyP2
 --- !u!1 &169257191
 GameObject:
   m_ObjectHideFlags: 0
@@ -1236,7 +1236,7 @@ GameObject:
   - component: {fileID: 243682765}
   m_Layer: 0
   m_Name: Vertical-2 1 X 1 (2)
-  m_TagString: BuildingBlockP2
+  m_TagString: WoodenP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1381,10 +1381,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodenBlockTag: WoodenP1
+  woodenBlockTag: WoodenP2
   insideGrid: 0
   battleMode: 0
-  targetTag: Enemy
+  targetTag: EnemyP2
 --- !u!1 &268428293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3435,11 +3435,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 0}
   health: 2
-  woodenBlockTag: 
+  woodenBlockTag: WoodenP1
   currentFireLevel: 0
-  lowFire: {fileID: 0}
-  mediumFire: {fileID: 0}
-  highFire: {fileID: 0}
+  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
+  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
+  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
   battleMode: 0
 --- !u!114 &533594183
 MonoBehaviour:
@@ -3773,9 +3773,9 @@ MonoBehaviour:
   health: 2
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
-  lowFire: {fileID: 0}
-  mediumFire: {fileID: 0}
-  highFire: {fileID: 0}
+  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
+  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
+  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
   battleMode: 0
 --- !u!114 &639479585
 MonoBehaviour:
@@ -4089,9 +4089,9 @@ MonoBehaviour:
   health: 2
   woodenBlockTag: WoodenP1
   currentFireLevel: 0
-  lowFire: {fileID: 0}
-  mediumFire: {fileID: 0}
-  highFire: {fileID: 0}
+  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
+  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
+  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
   battleMode: 0
 --- !u!61 &647588767
 BoxCollider2D:
@@ -5157,7 +5157,7 @@ GameObject:
   - component: {fileID: 865339649}
   m_Layer: 0
   m_Name: Vertical-2
-  m_TagString: BuildingBlock
+  m_TagString: WoodenP1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6717,7 +6717,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1174198894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eda20e77ef1a34f15b7ac55a1fb875c7, type: 3}
+  m_Script: {fileID: 11500000, guid: 21783007bea1443a7bf7f06f9e2f1157, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   but: {fileID: 0}
@@ -6863,7 +6863,7 @@ GameObject:
   - component: {fileID: 1194812456}
   m_Layer: 0
   m_Name: Vertical-1 X 1 (2)
-  m_TagString: BuildingBlock
+  m_TagString: WoodenP1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7698,7 +7698,7 @@ GameObject:
   - component: {fileID: 1275741502}
   m_Layer: 0
   m_Name: Horizontal (1)
-  m_TagString: BuildingBlock
+  m_TagString: WoodenP1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11969,7 +11969,7 @@ GameObject:
   - component: {fileID: 1898303124}
   m_Layer: 0
   m_Name: Vertical-2 II
-  m_TagString: BuildingBlockP2
+  m_TagString: WoodenP2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12114,10 +12114,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13fa80acaabb415aae465876f40c7380, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  woodenBlockTag: WoodenP1
+  woodenBlockTag: WoodenP2
   insideGrid: 0
   battleMode: 0
-  targetTag: Enemy
+  targetTag: EnemyP2
 --- !u!1 &1901683807
 GameObject:
   m_ObjectHideFlags: 0
@@ -13631,9 +13631,9 @@ MonoBehaviour:
   health: 2
   woodenBlockTag: WoodenP1
   currentFireLevel: 0
-  lowFire: {fileID: 0}
-  mediumFire: {fileID: 0}
-  highFire: {fileID: 0}
+  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
+  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
+  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
   battleMode: 0
 --- !u!61 &1944668392
 BoxCollider2D:
@@ -14350,9 +14350,9 @@ MonoBehaviour:
   health: 2
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
-  lowFire: {fileID: 0}
-  mediumFire: {fileID: 0}
-  highFire: {fileID: 0}
+  lowFire: {fileID: 21300000, guid: e0ef941d10b8e40ec882cd6442346c37, type: 3}
+  mediumFire: {fileID: 21300000, guid: 597b006ac15069447861eee601bfc8a1, type: 3}
+  highFire: {fileID: 21300000, guid: 073f03466913f416d8bdcc59cc47581c, type: 3}
   battleMode: 0
 --- !u!114 &2136929562
 MonoBehaviour:

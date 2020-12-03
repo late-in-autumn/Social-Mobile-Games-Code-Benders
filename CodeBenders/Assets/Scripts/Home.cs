@@ -1,12 +1,23 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Used for jumping to levels from the home screen.
+/// </summary>
 public class Home :MonoBehaviour
 {
+    /// <summary>
+    /// Jump to Level 1.
+    /// </summary>
+    public void MainLevel() => PlayGame(2);
 
-    
+    /// <summary>
+    /// Jump to Level 2.
+    /// </summary>
+    public void ExtendedLevel() => PlayGame(3);
 
-    public void PlayGame()
+    // jump to a given level
+    private void PlayGame(int scene)
     {
         Transform parentTransform = GameObject.FindWithTag("pl1").transform;
 
@@ -18,10 +29,6 @@ public class Home :MonoBehaviour
         }
 
         DontDestroyOnLoad(parentTransform.gameObject);
-      //  DontDestroyOnLoad(GameObject.FindWithTag("pl2"));
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + scene);
     }
-    
-
-
 }

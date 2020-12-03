@@ -5,8 +5,7 @@
 public class CheckLevel2 : MonoBehaviour
 {
 	public GameObject but;
-
-	
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -55,8 +54,6 @@ public class CheckLevel2 : MonoBehaviour
         if(count == 12) {
         	but.GetComponent<Button> ().interactable = true;
         }
-        
-        
     }
 
     public void click() {
