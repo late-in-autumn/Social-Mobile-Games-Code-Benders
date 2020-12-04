@@ -9,15 +9,15 @@ public class Home :MonoBehaviour
     /// <summary>
     /// Jump to Level 1.
     /// </summary>
-    public void MainLevel() => PlayGame(2);
+    public void MainLevel() => PlayGame("level1-intro");
 
     /// <summary>
     /// Jump to Level 2.
     /// </summary>
-    public void ExtendedLevel() => PlayGame(3);
+    public void ExtendedLevel() => PlayGame("level2-intro");
 
     // jump to a given level
-    private void PlayGame(int scene)
+    private void PlayGame(string scene)
     {
         Transform parentTransform = GameObject.FindWithTag("pl1").transform;
 
@@ -29,6 +29,6 @@ public class Home :MonoBehaviour
         }
 
         DontDestroyOnLoad(parentTransform.gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + scene);
+        SceneManager.LoadScene(scene);
     }
 }
