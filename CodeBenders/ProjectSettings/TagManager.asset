@@ -23,6 +23,10 @@ TagManager:
   - ProjectileP2
   - PlayerTurn
   - Battle
+  - WoodenP1
+  - WoodenP2
+  - TileMap
+  - Telemetry
   layers:
   - Default
   - TransparentFX

@@ -14,11 +14,15 @@ public class EnableSlingshotByPlayerTurn : MonoBehaviour
         switch (player)
         {
             case PlayersEnum.PlayerOne:
-                GameObject.FindWithTag("SlingshotP1").SendMessage("EnableSlingshotReloading");
-                break;
+                if (GameObject.FindWithTag("SlingshotP1"))
+                    GameObject.FindWithTag("SlingshotP1").SendMessage("EnableSlingshotReloading");
+                return;
             case PlayersEnum.PlayerTwo:
-                GameObject.FindWithTag("SlingshotP2").SendMessage("EnableSlingshotReloading");
-                break;
+                if (GameObject.FindWithTag("SlingshotP2"))
+                    GameObject.FindWithTag("SlingshotP2").SendMessage("EnableSlingshotReloading");
+                return;
+            default:
+                return;
         }
     }
 }

@@ -108,7 +108,7 @@ public class ProjectileGenerator : MonoBehaviour
         return projectile;
     }
     
-    //called before the first frame update
+    // called before the first frame update
     private void Start() => _slingshotLoader = GetComponent<SlingshotLoader>();
 
     // called once per frame

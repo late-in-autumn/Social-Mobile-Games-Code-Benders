@@ -33,12 +33,17 @@ public class ControlButton : MonoBehaviour
 
                 // Once 'Start Battle' Button has been Clicked, Disable the Button as it is no longer needed!
                 battle.gameObject.SetActive(false);
-
+                GameObject[] grids = GameObject.FindGameObjectsWithTag("TileMap");
+                for(int i=0; i < grids.Length; i++) {
+                    grids[i].SetActive(false);
+                }
+                
                 buildingBlocks = FindObjectsOfType(typeof(Rigidbody2D)) as Rigidbody2D[];
                 if (buildingBlocks != null)
                     foreach (Rigidbody2D buildingBlock in buildingBlocks)
                     {
-                        if (buildingBlock.tag.Contains("BuildingBlock"))
+                        if (buildingBlock.tag.Contains("BuildingBlock")
+                            || buildingBlock.tag.Contains("Wooden"))
                         {
                             buildingBlock.constraints = RigidbodyConstraints2D.None;
                         }
@@ -49,6 +54,7 @@ public class ControlButton : MonoBehaviour
                 foreach(GameObject enemy in enemiesP1)
                 {
                     enemy.GetComponent<Enemy>().enabled = true;
+                    enemy.GetComponent<Enemy>().battleMode = true;
                     enemy.GetComponent<DragDrop>().enabled = false;
 
                 }
@@ -56,6 +62,14 @@ public class ControlButton : MonoBehaviour
                 foreach(GameObject block in blocksP1)
                 {
                     block.GetComponent<DragDrop>().enabled = false;
+                    block.GetComponent<Block>().battleMode = true;
+                }
+                
+                blocksP1 = GameObject.FindGameObjectsWithTag("WoodenP1");
+                foreach(GameObject block in blocksP1)
+                {
+                    block.GetComponent<DragDrop>().enabled = false;
+                    block.GetComponent<Block>().battleMode = true;
                 }
 
                 // enable slingshot reload for player 1
@@ -68,12 +82,22 @@ public class ControlButton : MonoBehaviour
                 foreach(GameObject enemy in enemiesP2)
                 {
                     enemy.GetComponent<Enemy>().enabled = true;
+                    enemy.GetComponent<Enemy>().battleMode = true;
                     enemy.GetComponent<DragDrop>().enabled = false;
                 }
+
                 blocksP2 = GameObject.FindGameObjectsWithTag("BuildingBlockP2");
                 foreach(GameObject block in blocksP2)
                 {
                     block.GetComponent<DragDrop>().enabled = false;
+                    block.GetComponent<Block>().battleMode = true;
+                }
+                
+                blocksP2 = GameObject.FindGameObjectsWithTag("WoodenP2");
+                foreach(GameObject block in blocksP2)
+                {
+                    block.GetComponent<DragDrop>().enabled = false;
+                    block.GetComponent<Block>().battleMode = true;
                 }
 
                 moveCam.SwitchCameraMode(0);
