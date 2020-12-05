@@ -9,7 +9,7 @@ public class Check : MonoBehaviour
     void Start()
     {
         but = GameObject.FindWithTag("Battle");
-        but.GetComponent<Button> ().interactable = false;
+        but.GetComponent<Button>().interactable = false;
     }
 
     // Update is called once per frame
@@ -44,7 +44,7 @@ public class Check : MonoBehaviour
         }
     }
 
-    public void click() {
+    public void Click() {
         but = GameObject.FindWithTag("Battle");
         but.GetComponent<Button> ().interactable = false;
     }
