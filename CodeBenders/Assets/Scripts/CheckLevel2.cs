@@ -5,13 +5,12 @@
 public class CheckLevel2 : MonoBehaviour
 {
 	public GameObject but;
-
-	
+    
     // Start is called before the first frame update
     void Start()
     {
         but = GameObject.FindWithTag("Battle");
-        but.GetComponent<Button> ().interactable = false;
+        but.GetComponent<Button>().interactable = false;
     }
 
     // Update is called once per frame
@@ -55,11 +54,9 @@ public class CheckLevel2 : MonoBehaviour
         if(count == 12) {
         	but.GetComponent<Button> ().interactable = true;
         }
-        
-        
     }
 
-    public void click() {
+    public void Click() {
         but = GameObject.FindWithTag("Battle");
         but.GetComponent<Button> ().interactable = false;
     }

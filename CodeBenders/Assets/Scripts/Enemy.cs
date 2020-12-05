@@ -42,6 +42,21 @@ public class Enemy : MonoBehaviour
     public Sprite highFire;
 
     /// <summary>
+    /// Animation controller for low fire.
+    /// </summary>
+    public RuntimeAnimatorController lowFireController;
+
+    /// <summary>
+    /// Animation controller for medium fire.
+    /// </summary>
+    public RuntimeAnimatorController mediumFireController;
+
+    /// <summary>
+    /// Animation controller for high fire.
+    /// </summary>
+    public RuntimeAnimatorController highFireController;
+
+    /// <summary>
     /// Whether we are in battle mode or not
     /// </summary>
     public bool battleMode;
@@ -62,12 +77,14 @@ public class Enemy : MonoBehaviour
             {
                 case 1: // promote low fire to medium fire
                     health += colInfo.relativeVelocity.magnitude;
-                    GetComponent<SpriteRenderer>().sprite = mediumFire;
+                    GetComponentInChildren<SpriteRenderer>().sprite = mediumFire;
+                    GetComponentInChildren<Animator>().runtimeAnimatorController = mediumFireController;
                     currentFireLevel++;
                     break;
                 case 2: // promote medium fire to high fire
                     health += colInfo.relativeVelocity.magnitude;
-                    GetComponent<SpriteRenderer>().sprite = highFire;
+                    GetComponentInChildren<SpriteRenderer>().sprite = highFire;
+                    GetComponentInChildren<Animator>().runtimeAnimatorController = highFireController;
                     currentFireLevel++;
                     break;
             }
@@ -87,9 +104,10 @@ public class Enemy : MonoBehaviour
         // initialize the sound effect
         source = GetComponent<AudioSource>();
         
-        if (lowFire == null || String.IsNullOrWhiteSpace(woodenBlockTag)) return;
+        if (lowFire == null || lowFireController == null || String.IsNullOrWhiteSpace(woodenBlockTag)) return;
         // initialize to low fire
-        GetComponent<SpriteRenderer>().sprite = lowFire;
+        GetComponentInChildren<SpriteRenderer>().sprite = lowFire;
+        GetComponentInChildren<Animator>().runtimeAnimatorController = lowFireController;
         currentFireLevel = 1;
     }
 }

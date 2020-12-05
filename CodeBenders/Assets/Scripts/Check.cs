@@ -4,13 +4,12 @@ using UnityEngine.UI;
 public class Check : MonoBehaviour
 {
 	public GameObject but;
-
-	
+    
     // Start is called before the first frame update
     void Start()
     {
         but = GameObject.FindWithTag("Battle");
-        but.GetComponent<Button> ().interactable = false;
+        but.GetComponent<Button>().interactable = false;
     }
 
     // Update is called once per frame
@@ -27,7 +26,6 @@ public class Check : MonoBehaviour
         for(int i =0;i<buildingBlocks.Length;i++)
         {
         	if(buildingBlocks[i].GetComponent<Block>().insideGrid == true)
-            
             {
                 count +=1;
             }
@@ -36,7 +34,6 @@ public class Check : MonoBehaviour
         for(int i =0;i<targets.Length;i++)
         {
             if(targets[i].GetComponent<Target>().inside_grid == true)
-            
             {
                 count +=1;
             }
@@ -45,11 +42,9 @@ public class Check : MonoBehaviour
         if(count == 12) {
         	but.GetComponent<Button> ().interactable = true;
         }
-        
-        
     }
 
-    public void click() {
+    public void Click() {
         but = GameObject.FindWithTag("Battle");
         but.GetComponent<Button> ().interactable = false;
     }

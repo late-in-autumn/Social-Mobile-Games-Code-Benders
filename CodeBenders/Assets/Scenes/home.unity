@@ -516,7 +516,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1320697496}
-        m_MethodName: PlayGame
+        m_MethodName: ExtendedLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1319,7 +1319,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1320697496}
-        m_MethodName: PlayGame
+        m_MethodName: MainLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
