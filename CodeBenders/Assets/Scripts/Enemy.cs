@@ -14,7 +14,7 @@ public class Enemy : MonoBehaviour
     /// <summary>
     /// How much damage can a target withstand.
     /// </summary>
-    public float health = 2f;
+    public float health = 20f;
 
     /// <summary>
     /// Tag for identifying the wooden blocks.
@@ -76,13 +76,13 @@ public class Enemy : MonoBehaviour
             switch (currentFireLevel)
             {
                 case 1: // promote low fire to medium fire
-                    health += colInfo.relativeVelocity.magnitude;
+                    health = 40f;
                     GetComponentInChildren<SpriteRenderer>().sprite = mediumFire;
                     GetComponentInChildren<Animator>().runtimeAnimatorController = mediumFireController;
                     currentFireLevel++;
                     break;
                 case 2: // promote medium fire to high fire
-                    health += colInfo.relativeVelocity.magnitude;
+                    health = 60f;
                     GetComponentInChildren<SpriteRenderer>().sprite = highFire;
                     GetComponentInChildren<Animator>().runtimeAnimatorController = highFireController;
                     currentFireLevel++;
@@ -94,7 +94,7 @@ public class Enemy : MonoBehaviour
             // if the collision is more than what the target can withstand then it gets destroyed
             if (health.CompareTo(colInfo.relativeVelocity.magnitude) <= 0) Destroy(gameObject);
             // else its health gets decreased
-            else health -= colInfo.relativeVelocity.magnitude;
+            else health -= 20;
         }
     }
 
