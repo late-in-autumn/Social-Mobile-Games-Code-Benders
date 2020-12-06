@@ -301,7 +301,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 770014956}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f99e7cf700bf747198fc0973456e315f, type: 3}
+  m_Script: {fileID: 11500000, guid: 7e10033d7b05edd478fa3a697b8ae005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &770014958
@@ -619,7 +619,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: 81a4604202b474c538e41b1959570fb7, type: 3}
+  m_Texture: {fileID: 2800000, guid: 99c36d2b2f408794299f3030bcca4151, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
