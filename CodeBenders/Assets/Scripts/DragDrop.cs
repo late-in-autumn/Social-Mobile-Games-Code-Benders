@@ -28,7 +28,9 @@ public class DragDrop : MonoBehaviour
             }
             // Constrains Player 1's objects to the grid
             // Takes into account grid's offset in coordinate system
-            if(gameObject.tag == "BuildingBlock" || gameObject.tag == "Enemy")
+            if(gameObject.CompareTag("BuildingBlock")
+               || gameObject.CompareTag("WoodenP1")
+               || gameObject.CompareTag("Enemy"))
             {
               if ((transform.position.x - tileWidth/2)<-17.09f)
                 transform.position = new Vector2(-17.09f+tileWidth/2, Mathf.RoundToInt(transform.position.y));
@@ -74,7 +76,9 @@ public class DragDrop : MonoBehaviour
         {
             // Snapping Player 1's objects to grid
             // takes into account the grid's offset from the coordinate system
-            if(gameObject.tag == "BuildingBlock" || gameObject.tag == "Enemy")
+            if(gameObject.CompareTag("BuildingBlock")
+               || gameObject.CompareTag("WoodenP1")
+               || gameObject.CompareTag("Enemy"))
             {
               if (transform.position.x - (int) transform.position.x < 0.45)
                 if (transform.position.y - (int) transform.position.y < 0.15 || transform.position.y - (int) transform.position.y > 0.65)
@@ -91,6 +95,24 @@ public class DragDrop : MonoBehaviour
                   transform.position = new Vector2(Mathf.Ceil(transform.position.x) + 0.335f, Mathf.RoundToInt(transform.position.y) + 0.1f);
                 else
                   transform.position = new Vector2(Mathf.Ceil(transform.position.x) + 0.335f, Mathf.Floor(transform.position.y) + 0.1f);
+
+
+              if(gameObject.tag.Contains("BuildingBlock")
+                 || gameObject.tag.Contains("Wooden")) {
+                if(!gameObject.GetComponent<Block>().insideGrid) {
+                  gameObject.GetComponent<Block>().insideGrid = true;
+                  GameObject.FindWithTag("Battle").SendMessage("Change", 1);
+                    
+                }
+              }
+              else {
+                if(!gameObject.GetComponent<Target>().inside_grid) {
+                  gameObject.GetComponent<Target>().inside_grid = true;
+                  GameObject.FindWithTag("Battle").SendMessage("Change", 1);
+                    
+                }
+              }
+                  
             }
             // Snapping Player 2's objects to grid
             else
@@ -105,6 +127,20 @@ public class DragDrop : MonoBehaviour
                   transform.position = new Vector2(Mathf.Floor(transform.position.x) + 0.9f, Mathf.RoundToInt(transform.position.y) + 0.1f);
                 else
                   transform.position = new Vector2(Mathf.Floor(transform.position.x) + 0.9f, Mathf.Floor(transform.position.y) + 0.1f);
+
+              if(gameObject.tag.Contains("BuildingBlock")
+                 || gameObject.tag.Contains("Wooden")) {
+                if(!gameObject.GetComponent<Block>().insideGrid) {
+                  gameObject.GetComponent<Block>().insideGrid = true;
+                  GameObject.FindWithTag("Battle").SendMessage("Change", 2);
+                }
+              }
+              else {
+                if(!gameObject.GetComponent<Target>().inside_grid) {
+                  gameObject.GetComponent<Target>().inside_grid = true;
+                  GameObject.FindWithTag("Battle").SendMessage("Change", 2);
+                }
+              }
             }
         }
         isDragged = false;

@@ -7,9 +7,7 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     // class-specific constant: how far is the player allowed to drag the projectile
-    private const float MaxDragDistance = 2f;
-    // class-specific constant: the delay after disabling SpringJoin2D component for actions like self-destruction
-    private const float SpringJointPostDisableDelay = 6f;
+    private const float MaxDragDistance = 2.2f;
     // class-specific constant: the delay after release to disable SpringJoint2D component
     private const float SpringJointReleaseDelay = 0.15f;
 
@@ -38,21 +36,37 @@ public class Projectile : MonoBehaviour
         // disable the SpringJoint2D component after some delay to allow the projectile to fly freely
         yield return new WaitForSeconds(SpringJointReleaseDelay);
         _projectileSpringJoint.enabled = false;
-        
+
         // update the telemetry counter
-        GameObject.Find("Telemetry").SendMessage(
+        GameObject.FindWithTag("Telemetry").SendMessage(
             gameObject.tag.Equals("ProjectileP1") ? "PlayerOneFired" : "PlayerTwoFired");
-        
-        // start the slingshot reload coroutine
-        StartCoroutine(slingshot.gameObject.GetComponent<SlingshotLoader>().ReloadProjectileCoroutine());
-
-        // wait before further actions such as self-destruction
-        yield return new WaitForSeconds(SpringJointPostDisableDelay);
-
-        //Change player name on display
-        GameObject.FindWithTag("PlayerTurn").SendMessage("changePlayer", gameObject);
-        Destroy(gameObject);
     }
+
+    // change the current player to the other side, and destroy the current projectile
+    private void ChangePlayerAndDestroy()
+    {
+        // signal that the current slingshot needs a new projectile
+        if (slingshot != null)
+            slingshot.gameObject.GetComponent<ProjectileGenerator>().newProjectileNeeded = true;
+
+        if (GameObject.FindWithTag("PlayerTurn"))
+        {
+            // change player name on display
+            GameObject.FindWithTag("PlayerTurn").SendMessage("ChangePlayer", gameObject);
+        
+            // enable the slingshot for the other side
+            GameObject.FindWithTag("PlayerTurn").SendMessage("EnableSlingshotForPlayer",
+                gameObject.CompareTag("ProjectileP1") ? PlayersEnum.PlayerTwo : PlayersEnum.PlayerOne);
+        }
+
+       Destroy(gameObject);
+    }
+
+    // event trigger for moving out of sight
+    private void OnBecameInvisible() => ChangePlayerAndDestroy();
+
+    // event trigger for colliding with another object
+    private void OnCollisionEnter2D(Collision2D other) => ChangePlayerAndDestroy();
 
     // event trigger for mouse click (left button down, also touch events on phones)
     private void OnMouseDown()

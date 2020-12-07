@@ -1,44 +1,28 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DisplayPlayer : MonoBehaviour
 {
-    
-    // Start is called before the first frame update
-    public GameObject show;
     public string player1, player2;
-    void Start()
+    
+    // called before the first frame update;
+    private void Start()
     {
-        show = GameObject.FindGameObjectWithTag("PlayerTurn");
-        show.SetActive(false);
+        GetComponent<Text>().text = String.Empty;
         player1 = GameObject.FindWithTag("pl1").GetComponent<InputField>().text + "'s Turn!";
         player2 = GameObject.FindWithTag("pl2").GetComponent<InputField>().text + "'s Turn!";
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-   
-    }
-
-    public void display() {
-
-        GameObject battle;
-        battle = GameObject.FindWithTag("Battle");
-
-        if (battle.GetComponentInChildren<Text>().text == "Start Battle!") {
-            show.SetActive(true);
-        }
-       
-        show.GetComponent<Text>().text = player1;
+    public void Display() {
+        GetComponent<Text>().text = player1;
         FadeInAndOut();
-
     }
 
-    public void changePlayer(GameObject projectile)
+    public void ChangePlayer(GameObject projectile)
     {
-        GameObject.FindWithTag("PlayerTurn").GetComponent<Text>().text = (projectile.tag == "ProjectileP1") ? player2 : player1;
+        GetComponent<Text>().text = (projectile.CompareTag("ProjectileP1")) ? player2 : player1;
         FadeInAndOut();
     }
 
@@ -49,7 +33,7 @@ public class DisplayPlayer : MonoBehaviour
 
     public IEnumerator FadeTextAlpha()
     {
-        Text i = show.GetComponent<Text>();
+        Text i = GetComponent<Text>();
         float fadeInTime  = 1f;
         float fadeOutTime = 1f;
 
