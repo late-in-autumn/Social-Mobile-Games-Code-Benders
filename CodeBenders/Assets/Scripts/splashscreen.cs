@@ -13,6 +13,6 @@ public class splashscreen : MonoBehaviour
     IEnumerator Display()
     {
         yield return new WaitForSeconds(4);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("home");
     }
 }
