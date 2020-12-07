@@ -10,11 +10,11 @@ public class Enemy : MonoBehaviour
     /// The sound effect that is attached.
     /// </summary>
     public AudioSource source;
-    
+
     /// <summary>
     /// How much damage can a target withstand.
     /// </summary>
-    public float health = 20f;
+    public float health;
 
     /// <summary>
     /// Tag for identifying the wooden blocks.
@@ -60,7 +60,7 @@ public class Enemy : MonoBehaviour
     /// Whether we are in battle mode or not
     /// </summary>
     public bool battleMode;
-    
+
     // called once upon collision
     private void OnCollisionEnter2D(Collision2D colInfo)
     {
@@ -69,7 +69,7 @@ public class Enemy : MonoBehaviour
 
         // play the sound effect
         source.Play();
-        
+
         // optionally increase the health if gets hit by a wooden block
         if (!String.IsNullOrWhiteSpace(woodenBlockTag) && colInfo.gameObject.CompareTag(woodenBlockTag))
         {
@@ -103,7 +103,7 @@ public class Enemy : MonoBehaviour
     {
         // initialize the sound effect
         source = GetComponent<AudioSource>();
-        
+
         if (lowFire == null || lowFireController == null || String.IsNullOrWhiteSpace(woodenBlockTag)) return;
         // initialize to low fire
         GetComponentInChildren<SpriteRenderer>().sprite = lowFire;

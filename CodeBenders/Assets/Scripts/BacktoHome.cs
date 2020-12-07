@@ -7,7 +7,7 @@ public class BacktoHome : MonoBehaviour
     // Start is called before the first frame update
 	public void Back_to_Home()
 	{
-		SceneManager.LoadScene(0);
+		SceneManager.LoadScene("home");
 	}
 
 }

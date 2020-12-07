@@ -533,7 +533,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 0}
-  health: 20
+  health: 10
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
   lowFire: {fileID: 0}
@@ -3436,7 +3436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 0}
-  health: 20
+  health: 10
   woodenBlockTag: 
   currentFireLevel: 0
   lowFire: {fileID: 0}
@@ -3679,7 +3679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 0}
-  health: 20
+  health: 10
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
   lowFire: {fileID: 0}
@@ -3998,7 +3998,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 0}
-  health: 20
+  health: 10
   woodenBlockTag: WoodenP1
   currentFireLevel: 0
   lowFire: {fileID: 0}
@@ -13457,7 +13457,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 0}
-  health: 20
+  health: 10
   woodenBlockTag: WoodenP1
   currentFireLevel: 0
   lowFire: {fileID: 0}
@@ -14179,7 +14179,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 0}
-  health: 20
+  health: 10
   woodenBlockTag: WoodenP2
   currentFireLevel: 0
   lowFire: {fileID: 0}
